@@ -1,0 +1,28 @@
+
+# 1 "CRC8.c"
+
+# 10
+unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize)
+{
+unsigned char CRC = 0;
+char DataIndex,bitIndex;
+
+for(DataIndex = 0; DataIndex < DataSize; DataIndex++)
+{
+
+CRC ^= Data[DataIndex];
+for(bitIndex = 0; bitIndex < 8; bitIndex++)
+{
+if((CRC & 0x80) != 0)
+{
+CRC = (CRC << 1) ^ 0x1DU;
+}
+else
+{
+CRC <<= 1;
+}
+}
+}
+
+return CRC;
+}

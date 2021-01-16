@@ -1,0 +1,96 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"10 CRC8.c
+[v _Get_CRC8 `(uc ~T0 @X0 1 ef2`*uc`uc ]
+"11
+{
+[; ;CRC8.c: 10: unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize)
+[; ;CRC8.c: 11: {
+[e :U _Get_CRC8 ]
+"10
+[v _Data `*uc ~T0 @X0 1 r1 ]
+[v _DataSize `uc ~T0 @X0 1 r2 ]
+"11
+[f ]
+"12
+[v _CRC `uc ~T0 @X0 1 a ]
+[; ;CRC8.c: 12: unsigned char CRC = 0;
+[e = _CRC -> -> 0 `i `uc ]
+"13
+[v _DataIndex `uc ~T0 @X0 1 a ]
+[v _bitIndex `uc ~T0 @X0 1 a ]
+[; ;CRC8.c: 13: char DataIndex,bitIndex;
+[; ;CRC8.c: 15: for(DataIndex = 0; DataIndex < DataSize; DataIndex++)
+"15
+{
+[e = _DataIndex -> -> 0 `i `uc ]
+[e $U 5  ]
+"16
+[e :U 2 ]
+[; ;CRC8.c: 16: {
+{
+[; ;CRC8.c: 18: CRC ^= Data[DataIndex];
+"18
+[e =^ _CRC *U + _Data * -> _DataIndex `ux -> -> # *U _Data `ui `ux ]
+[; ;CRC8.c: 19: for(bitIndex = 0; bitIndex < 8; bitIndex++)
+"19
+{
+[e = _bitIndex -> -> 0 `i `uc ]
+[e $ < -> _bitIndex `i -> 8 `i 6  ]
+[e $U 7  ]
+"20
+[e :U 6 ]
+[; ;CRC8.c: 20: {
+{
+[; ;CRC8.c: 21: if((CRC & 0x80) != 0)
+"21
+[e $ ! != & -> _CRC `i -> 128 `i -> 0 `i 9  ]
+[; ;CRC8.c: 22: {
+"22
+{
+[; ;CRC8.c: 23: CRC = (CRC << 1) ^ 0x1DU;
+"23
+[e = _CRC -> ^ -> << -> _CRC `i -> 1 `i `ui -> 29 `ui `uc ]
+"24
+}
+[; ;CRC8.c: 24: }
+[e $U 10  ]
+"25
+[e :U 9 ]
+[; ;CRC8.c: 25: else
+[; ;CRC8.c: 26: {
+"26
+{
+[; ;CRC8.c: 27: CRC <<= 1;
+"27
+[e =<< _CRC -> 1 `i ]
+"28
+}
+[e :U 10 ]
+"29
+}
+"19
+[e ++ _bitIndex -> -> 1 `i `uc ]
+[e $ < -> _bitIndex `i -> 8 `i 6  ]
+[e :U 7 ]
+"29
+}
+"30
+}
+"15
+[e ++ _DataIndex -> -> 1 `i `uc ]
+[e :U 5 ]
+[e $ < -> _DataIndex `i -> _DataSize `i 2  ]
+[e :U 3 ]
+"30
+}
+[; ;CRC8.c: 28: }
+[; ;CRC8.c: 29: }
+[; ;CRC8.c: 30: }
+[; ;CRC8.c: 32: return CRC;
+"32
+[e ) _CRC ]
+[e $UE 1  ]
+[; ;CRC8.c: 33: }
+"33
+[e :UE 1 ]
+}

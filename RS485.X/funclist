@@ -1,0 +1,25 @@
+_I2CNak: CODE, 800 0 7
+_get_z_average: CODE, 827 0 1
+_UART_u8GetNodeID: CODE, 825 0 2
+_system_init: CODE, 750 0 12
+_I2CStop: CODE, 807 0 6
+_E_Read: CODE, 646 0 22
+_I2CAck: CODE, 793 0 7
+_main: CODE, 26 0 472
+_UART_vidSend: CODE, 576 0 43
+_UART_vidInit: CODE, 619 0 27
+_I2CRead: CODE, 708 0 16
+__initialization: CODE, 17 0 7
+_I2CRestart: CODE, 819 0 6
+_RS845_ManageState: CODE, 737 0 13
+_get_x_average: CODE, 829 0 1
+_I2CStart: CODE, 813 0 6
+_UART_vidNewDataReceived: CODE, 668 0 21
+_UART_Write: CODE, 762 0 12
+_E_Write: CODE, 724 0 13
+_get_y_average: CODE, 828 0 1
+_I2CWait: CODE, 785 0 8
+_ini_adxl345: CODE, 498 0 78
+_I2CInit: CODE, 689 0 19
+_I2CSend: CODE, 774 0 11
+Total: 811
