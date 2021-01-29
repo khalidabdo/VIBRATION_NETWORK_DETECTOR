@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+$C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 10 10 1 2
 config CONFIG 0 2007 2007 2 2
@@ -91,108 +91,108 @@ STRING 36A-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\RS485.X.production.obj
-11 cinit CODE >936:C:\Users\khalid\AppData\Local\Temp\s9fo.
-11 cinit CODE >939:C:\Users\khalid\AppData\Local\Temp\s9fo.
-11 cinit CODE >980:C:\Users\khalid\AppData\Local\Temp\s9fo.
-12 cinit CODE >983:C:\Users\khalid\AppData\Local\Temp\s9fo.
-13 cinit CODE >984:C:\Users\khalid\AppData\Local\Temp\s9fo.
-14 cinit CODE >985:C:\Users\khalid\AppData\Local\Temp\s9fo.
-15 cinit CODE >986:C:\Users\khalid\AppData\Local\Temp\s9fo.
-16 cinit CODE >987:C:\Users\khalid\AppData\Local\Temp\s9fo.
-17 cinit CODE >993:C:\Users\khalid\AppData\Local\Temp\s9fo.
-17 cinit CODE >995:C:\Users\khalid\AppData\Local\Temp\s9fo.
-18 cinit CODE >996:C:\Users\khalid\AppData\Local\Temp\s9fo.
-4 intentry CODE >33:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-243 text24 CODE >60:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-244 text24 CODE >62:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-246 text24 CODE >64:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-250 text24 CODE >66:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-254 text24 CODE >67:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-25C text24 CODE >64:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-26A text24 CODE >69:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-26D text24 CODE >70:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-307 text23 CODE >49:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-307 text23 CODE >51:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-30D text23 CODE >53:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-313 text23 CODE >55:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C2 text22 CODE >33:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C2 text22 CODE >35:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C4 text22 CODE >37:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C5 text22 CODE >38:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C6 text22 CODE >39:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2C7 text22 CODE >40:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2CA text22 CODE >41:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2CC text22 CODE >47:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-34F text21 CODE >102:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-34F text21 CODE >104:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-352 text21 CODE >105:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-353 text21 CODE >106:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-337 text20 CODE >115:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-337 text20 CODE >117:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2EA text19 CODE >141:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2EA text19 CODE >145:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2ED text19 CODE >146:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2EF text19 CODE >147:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2F5 text19 CODE >148:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2F6 text19 CODE >149:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-362 text18 CODE >77:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-362 text18 CODE >79:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-365 text18 CODE >80:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-32C text17 CODE >128:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-32F text17 CODE >130:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-331 text17 CODE >131:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-335 text17 CODE >132:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-336 text17 CODE >133:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-35C text16 CODE >51:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-35C text16 CODE >53:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-35F text16 CODE >54:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-356 text15 CODE >64:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-356 text15 CODE >66:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-359 text15 CODE >67:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2AC text14 CODE >171:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2AC text14 CODE >175:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2AD text14 CODE >177:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2AF text14 CODE >179:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2B3 text14 CODE >181:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2B4 text14 CODE >183:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2B6 text14 CODE >185:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2BC text14 CODE >186:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2BD text14 CODE >187:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2BE text14 CODE >188:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-348 text13 CODE >89:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-348 text13 CODE >91:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-34B text13 CODE >92:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-34C text13 CODE >93:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2D7 text12 CODE >23:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2D7 text12 CODE >25:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2DA text12 CODE >26:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2DB text12 CODE >27:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2DC text12 CODE >28:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2E0 text12 CODE >30:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2E3 text12 CODE >31:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2E5 text12 CODE >32:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2E8 text12 CODE >33:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2E9 text12 CODE >43:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-320 text11 CODE >13:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-323 text11 CODE >15:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-327 text11 CODE >16:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-32B text11 CODE >17:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-368 text10 CODE >72:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-368 text10 CODE >74:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-291 text9 CODE >16:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-291 text9 CODE >18:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-294 text9 CODE >19:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-296 text9 CODE >20:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-297 text9 CODE >21:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-29A text9 CODE >22:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-29D text9 CODE >23:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-29E text9 CODE >24:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-29F text9 CODE >25:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2A0 text9 CODE >26:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2A1 text9 CODE >27:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2A2 text9 CODE >28:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2A5 text9 CODE >30:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
-2AB text9 CODE >31:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
+11 cinit CODE >936:C:\Users\khalid\AppData\Local\Temp\s9i4.
+11 cinit CODE >939:C:\Users\khalid\AppData\Local\Temp\s9i4.
+11 cinit CODE >980:C:\Users\khalid\AppData\Local\Temp\s9i4.
+12 cinit CODE >983:C:\Users\khalid\AppData\Local\Temp\s9i4.
+13 cinit CODE >984:C:\Users\khalid\AppData\Local\Temp\s9i4.
+14 cinit CODE >985:C:\Users\khalid\AppData\Local\Temp\s9i4.
+15 cinit CODE >986:C:\Users\khalid\AppData\Local\Temp\s9i4.
+16 cinit CODE >987:C:\Users\khalid\AppData\Local\Temp\s9i4.
+17 cinit CODE >993:C:\Users\khalid\AppData\Local\Temp\s9i4.
+17 cinit CODE >995:C:\Users\khalid\AppData\Local\Temp\s9i4.
+18 cinit CODE >996:C:\Users\khalid\AppData\Local\Temp\s9i4.
+4 intentry CODE >33:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+243 text24 CODE >60:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+244 text24 CODE >62:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+246 text24 CODE >64:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+250 text24 CODE >66:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+254 text24 CODE >67:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+25C text24 CODE >64:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+26A text24 CODE >69:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+26D text24 CODE >70:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+307 text23 CODE >49:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+307 text23 CODE >51:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+30D text23 CODE >53:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+313 text23 CODE >55:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C2 text22 CODE >33:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C2 text22 CODE >35:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C4 text22 CODE >37:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C5 text22 CODE >38:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C6 text22 CODE >39:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2C7 text22 CODE >40:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2CA text22 CODE >41:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2CC text22 CODE >47:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+34F text21 CODE >102:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+34F text21 CODE >104:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+352 text21 CODE >105:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+353 text21 CODE >106:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+337 text20 CODE >115:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+337 text20 CODE >117:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2EA text19 CODE >141:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2EA text19 CODE >145:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2ED text19 CODE >146:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2EF text19 CODE >147:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2F5 text19 CODE >148:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2F6 text19 CODE >149:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+362 text18 CODE >77:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+362 text18 CODE >79:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+365 text18 CODE >80:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+32C text17 CODE >128:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+32F text17 CODE >130:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+331 text17 CODE >131:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+335 text17 CODE >132:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+336 text17 CODE >133:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+35C text16 CODE >51:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+35C text16 CODE >53:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+35F text16 CODE >54:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+356 text15 CODE >64:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+356 text15 CODE >66:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+359 text15 CODE >67:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2AC text14 CODE >171:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2AC text14 CODE >175:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2AD text14 CODE >177:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2AF text14 CODE >179:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2B3 text14 CODE >181:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2B4 text14 CODE >183:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2B6 text14 CODE >185:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2BC text14 CODE >186:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2BD text14 CODE >187:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2BE text14 CODE >188:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+348 text13 CODE >89:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+348 text13 CODE >91:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+34B text13 CODE >92:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+34C text13 CODE >93:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2D7 text12 CODE >23:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2D7 text12 CODE >25:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2DA text12 CODE >26:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2DB text12 CODE >27:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2DC text12 CODE >28:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2E0 text12 CODE >30:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2E3 text12 CODE >31:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2E5 text12 CODE >32:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2E8 text12 CODE >33:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2E9 text12 CODE >43:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+320 text11 CODE >13:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+323 text11 CODE >15:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+327 text11 CODE >16:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+32B text11 CODE >17:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+368 text10 CODE >72:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+368 text10 CODE >74:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+291 text9 CODE >16:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+291 text9 CODE >18:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+294 text9 CODE >19:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+296 text9 CODE >20:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+297 text9 CODE >21:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+29A text9 CODE >22:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+29D text9 CODE >23:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+29E text9 CODE >24:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+29F text9 CODE >25:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2A0 text9 CODE >26:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2A1 text9 CODE >27:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2A2 text9 CODE >28:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2A5 text9 CODE >30:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
+2AB text9 CODE >31:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 107 text8 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awdiv.c
 107 text8 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awdiv.c
 10A text8 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\awdiv.c
@@ -225,88 +225,88 @@ $dist/default/production\RS485.X.production.obj
 281 text7 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
 288 text7 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
 28C text7 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul16.c
-211 text6 CODE >13:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-211 text6 CODE >16:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-23E text6 CODE >17:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-1DF text5 CODE >20:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-1DF text5 CODE >23:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-20C text5 CODE >24:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-1AD text4 CODE >27:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-1AD text4 CODE >30:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-1DA text4 CODE >31:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
-2FA text3 CODE >154:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2FA text3 CODE >157:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2FB text3 CODE >159:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-2FD text3 CODE >161:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-301 text3 CODE >163:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-305 text3 CODE >165:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-162 text2 CODE >6:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-162 text2 CODE >8:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-16D text2 CODE >9:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-177 text2 CODE >10:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-182 text2 CODE >11:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-18C text2 CODE >12:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-197 text2 CODE >13:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-1A1 text2 CODE >14:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-1AC text2 CODE >15:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
-314 text1 CODE >20:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-314 text1 CODE >22:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-317 text1 CODE >23:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-319 text1 CODE >24:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-31C text1 CODE >25:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-31F text1 CODE >26:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-19 maintext CODE >29:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-19 maintext CODE >36:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-1A maintext CODE >37:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-1B maintext CODE >40:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-1C maintext CODE >42:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-1D maintext CODE >44:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-2B maintext CODE >45:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-2D maintext CODE >46:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-37 maintext CODE >47:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-46 maintext CODE >48:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-48 maintext CODE >49:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-52 maintext CODE >50:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-61 maintext CODE >51:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-63 maintext CODE >56:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-6B maintext CODE >58:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-6C maintext CODE >59:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-6E maintext CODE >60:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-70 maintext CODE >61:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-71 maintext CODE >62:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-73 maintext CODE >63:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-79 maintext CODE >64:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-7A maintext CODE >65:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-80 maintext CODE >66:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-81 maintext CODE >67:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-87 maintext CODE >68:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-88 maintext CODE >69:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-8E maintext CODE >70:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-8F maintext CODE >71:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-95 maintext CODE >72:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-96 maintext CODE >73:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-9C maintext CODE >74:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-9D maintext CODE >75:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-9E maintext CODE >77:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-AF maintext CODE >78:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-BE maintext CODE >79:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-CD maintext CODE >82:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-D8 maintext CODE >83:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-E3 maintext CODE >84:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-EE maintext CODE >86:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-F6 maintext CODE >87:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-FE maintext CODE >88:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-106 maintext CODE >54:D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
-340 clrtext CODE >967:C:\Users\khalid\AppData\Local\Temp\s9fo.
-340 clrtext CODE >968:C:\Users\khalid\AppData\Local\Temp\s9fo.
-341 clrtext CODE >969:C:\Users\khalid\AppData\Local\Temp\s9fo.
-341 clrtext CODE >970:C:\Users\khalid\AppData\Local\Temp\s9fo.
-342 clrtext CODE >971:C:\Users\khalid\AppData\Local\Temp\s9fo.
-343 clrtext CODE >972:C:\Users\khalid\AppData\Local\Temp\s9fo.
-344 clrtext CODE >973:C:\Users\khalid\AppData\Local\Temp\s9fo.
-345 clrtext CODE >974:C:\Users\khalid\AppData\Local\Temp\s9fo.
-346 clrtext CODE >975:C:\Users\khalid\AppData\Local\Temp\s9fo.
-347 clrtext CODE >976:C:\Users\khalid\AppData\Local\Temp\s9fo.
+211 text6 CODE >13:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+211 text6 CODE >16:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+23E text6 CODE >17:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+1DF text5 CODE >20:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+1DF text5 CODE >23:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+20C text5 CODE >24:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+1AD text4 CODE >27:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+1AD text4 CODE >30:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+1DA text4 CODE >31:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
+2FA text3 CODE >154:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2FA text3 CODE >157:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2FB text3 CODE >159:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+2FD text3 CODE >161:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+301 text3 CODE >163:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+305 text3 CODE >165:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+162 text2 CODE >6:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+162 text2 CODE >8:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+16D text2 CODE >9:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+177 text2 CODE >10:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+182 text2 CODE >11:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+18C text2 CODE >12:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+197 text2 CODE >13:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+1A1 text2 CODE >14:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+1AC text2 CODE >15:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
+314 text1 CODE >20:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+314 text1 CODE >22:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+317 text1 CODE >23:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+319 text1 CODE >24:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+31C text1 CODE >25:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+31F text1 CODE >26:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+19 maintext CODE >29:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+19 maintext CODE >36:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+1A maintext CODE >37:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+1B maintext CODE >40:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+1C maintext CODE >42:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+1D maintext CODE >44:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+2B maintext CODE >45:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+2D maintext CODE >46:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+37 maintext CODE >47:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+46 maintext CODE >48:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+48 maintext CODE >49:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+52 maintext CODE >50:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+61 maintext CODE >51:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+63 maintext CODE >56:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+6B maintext CODE >58:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+6C maintext CODE >59:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+6E maintext CODE >60:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+70 maintext CODE >61:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+71 maintext CODE >62:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+73 maintext CODE >63:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+79 maintext CODE >64:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+7A maintext CODE >65:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+80 maintext CODE >66:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+81 maintext CODE >67:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+87 maintext CODE >68:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+88 maintext CODE >69:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+8E maintext CODE >70:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+8F maintext CODE >71:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+95 maintext CODE >72:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+96 maintext CODE >73:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+9C maintext CODE >74:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+9D maintext CODE >75:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+9E maintext CODE >77:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+AF maintext CODE >78:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+BE maintext CODE >79:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+CD maintext CODE >82:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+D8 maintext CODE >83:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+E3 maintext CODE >84:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+EE maintext CODE >86:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+F6 maintext CODE >87:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+FE maintext CODE >88:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+106 maintext CODE >54:D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+340 clrtext CODE >967:C:\Users\khalid\AppData\Local\Temp\s9i4.
+340 clrtext CODE >968:C:\Users\khalid\AppData\Local\Temp\s9i4.
+341 clrtext CODE >969:C:\Users\khalid\AppData\Local\Temp\s9i4.
+341 clrtext CODE >970:C:\Users\khalid\AppData\Local\Temp\s9i4.
+342 clrtext CODE >971:C:\Users\khalid\AppData\Local\Temp\s9i4.
+343 clrtext CODE >972:C:\Users\khalid\AppData\Local\Temp\s9i4.
+344 clrtext CODE >973:C:\Users\khalid\AppData\Local\Temp\s9i4.
+345 clrtext CODE >974:C:\Users\khalid\AppData\Local\Temp\s9i4.
+346 clrtext CODE >975:C:\Users\khalid\AppData\Local\Temp\s9i4.
+347 clrtext CODE >976:C:\Users\khalid\AppData\Local\Temp\s9i4.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -353,10 +353,10 @@ _SPEN C7 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _SYNC 4C4 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _TRMT 4C1 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _TXEN 4C5 0 ABS 0 - dist/default/production\RS485.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+___sp 0 0 STACK 2 stack C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 _main 32 0 CODE 0 maintext dist/default/production\RS485.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\RS485.X.production.obj
-start 20 0 CODE 0 init C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+start 20 0 CODE 0 init C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
@@ -369,12 +369,12 @@ __size_of_I2CStart 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _system_init 628 0 CODE 0 text1 dist/default/production\RS485.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __LnvCOMMON 0 0 ABS 0 nvCOMMON -
-intlevel0 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-intlevel1 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-intlevel2 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-intlevel3 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-intlevel4 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-intlevel5 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+intlevel0 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+intlevel1 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+intlevel2 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+intlevel3 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+intlevel4 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+intlevel5 0 0 CODE 0 functab C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\RS485.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
@@ -432,7 +432,7 @@ __size_of_I2CNak 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _TRISC0 438 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _TRISC6 43E 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _TRISC7 43F 0 ABS 0 - dist/default/production\RS485.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+___int_sp 0 0 STACK 2 stack C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -488,7 +488,7 @@ _ini_adxl345 2C4 0 CODE 0 text2 dist/default/production\RS485.X.production.obj
 saved_w 7E 0 ABS 0 - dist/default/production\RS485.X.production.obj
 _UART_vidNewDataReceived 584 0 CODE 0 text22 dist/default/production\RS485.X.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 __end_of_UART_vidNewDataReceived 5AE 0 CODE 0 text22 dist/default/production\RS485.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
@@ -528,8 +528,8 @@ _UART_vidSend 486 0 CODE 0 text24 dist/default/production\RS485.X.production.obj
 main@XAVG 49 0 BANK0 1 cstackBANK0 dist/default/production\RS485.X.production.obj
 main@YAVG 4B 0 BANK0 1 cstackBANK0 dist/default/production\RS485.X.production.obj
 main@ZAVG 4D 0 BANK0 1 cstackBANK0 dist/default/production\RS485.X.production.obj
-stackhi 0 0 ABS 0 - C:\Users\khalid\AppData\Local\Temp\s9fo.obj
-stacklo 0 0 ABS 0 - C:\Users\khalid\AppData\Local\Temp\s9fo.obj
+stackhi 0 0 ABS 0 - C:\Users\khalid\AppData\Local\Temp\s9i4.obj
+stacklo 0 0 ABS 0 - C:\Users\khalid\AppData\Local\Temp\s9i4.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\RS485.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -

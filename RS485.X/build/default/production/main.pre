@@ -2173,6 +2173,8 @@ Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
 Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
 Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
 
+
+
 }
 }
 

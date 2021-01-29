@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F882 ]
 [d frameptr 6 ]
-"6 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
+"6 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
 [v _ini_adxl345 ini_adxl345 `(v  1 e 1 0 ]
 "23
 [v _I2CInit I2CInit `(v  1 e 1 0 ]
@@ -27,7 +27,7 @@
 [v _E_Write E_Write `(uc  1 e 1 0 ]
 "171
 [v _E_Read E_Read `(uc  1 e 1 0 ]
-"13 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
+"13 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
 [v _get_averageX get_averageX `(s  1 e 2 0 ]
 "20
 [v _get_averageY get_averageY `(s  1 e 2 0 ]
@@ -45,13 +45,13 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"13 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
+"13 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _UART_Write UART_Write `(v  1 e 1 0 ]
 "20
 [v _system_init system_init `(v  1 e 1 0 ]
 "29
 [v _main main `(v  1 e 1 0 ]
-"16 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
+"16 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _UART_vidInit UART_vidInit `(v  1 e 1 0 ]
 "33
 [v _UART_vidNewDataReceived UART_vidNewDataReceived `II(v  1 e 1 0 ]
@@ -160,7 +160,7 @@
 [v _TRMT TRMT `VEb  1 e 0 @1217 ]
 "3908
 [v _TXEN TXEN `VEb  1 e 0 @1221 ]
-"13 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.h
+"13 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.h
 [v _ECU_ID ECU_ID `uc  1 e 1 0 ]
 [s S19 . 10 `uc 1 ID 1 0 :7:0 
 `uc 1 SwitchStatus 1 0 :1:7 
@@ -177,7 +177,7 @@
 "44
 [u S31 . 10 `[10]uc 1 DATA_BUFFER 10 0 `S19 1 . 10 0 ]
 [v _Data_Buffer Data_Buffer `S31  1 e 10 0 ]
-"29 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
+"29 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "34
@@ -199,14 +199,14 @@
 [v main@YH YH `uc  1 a 1 37 ]
 [v main@XH XH `uc  1 a 1 36 ]
 [v main@XL XL `uc  1 a 1 35 ]
-"91
+"93
 } 0
 "20
 [v _system_init system_init `(v  1 e 1 0 ]
 {
 "26
 } 0
-"6 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
+"6 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
 [v _ini_adxl345 ini_adxl345 `(v  1 e 1 0 ]
 {
 "15
@@ -218,7 +218,7 @@
 [v E_Write@ch ch `uc  1 p 1 3 ]
 "167
 } 0
-"27 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\average_calculations.c
+"27 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\average_calculations.c
 [v _get_averageZ get_averageZ `(s  1 e 2 0 ]
 {
 [v get_averageZ@Data Data `s  1 p 2 15 ]
@@ -265,7 +265,7 @@
 [v ___awdiv@dividend dividend `i  1 p 2 8 ]
 "42
 } 0
-"16 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
+"16 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _UART_vidInit UART_vidInit `(v  1 e 1 0 ]
 {
 "31
@@ -275,7 +275,7 @@
 {
 "75
 } 0
-"13 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\main.c
+"13 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _UART_Write UART_Write `(v  1 e 1 0 ]
 {
 [v UART_Write@data data `uc  1 a 1 wreg ]
@@ -283,7 +283,7 @@
 [v UART_Write@data data `uc  1 a 1 0 ]
 "17
 } 0
-"23 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\ADXL_m.c
+"23 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
 [v _I2CInit I2CInit `(v  1 e 1 0 ]
 {
 "43
@@ -343,7 +343,7 @@
 {
 "107
 } 0
-"33 D:\FreeLance\Abdulsallam\RS485_FAST\RS485_Vibration\RS485.X\UART_m.c
+"33 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _UART_vidNewDataReceived UART_vidNewDataReceived `II(v  1 e 1 0 ]
 {
 "47

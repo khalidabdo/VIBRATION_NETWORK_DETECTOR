@@ -4,7 +4,7 @@
  *
  * Created on January 10, 2021, 7:27 AM
  */
-#include "CRC8_CFG.h"
+#include "CRC8.h"
 
 
 unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize)

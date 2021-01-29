@@ -1755,14 +1755,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 "88
 [e = . . _Data_Buffer 1 8 -> >> -> _ZAVG `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 9 -> _ZAVG `uc ]
-"90
+"92
 }
 [e :U 142 ]
 "54
 [e $U 143  ]
 [e :U 144 ]
-[; ;main.c: 90: }
-[; ;main.c: 91: }
-"91
+[; ;main.c: 92: }
+[; ;main.c: 93: }
+"93
 [e :UE 141 ]
 }
