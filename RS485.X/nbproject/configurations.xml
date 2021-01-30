@@ -23,9 +23,6 @@
       <itemPath>System.c</itemPath>
       <itemPath>average_calculations.c</itemPath>
       <itemPath>average_calculations.h</itemPath>
-      <itemPath>CRC8.c</itemPath>
-      <itemPath>CRC8.h</itemPath>
-      <itemPath>CRC8_CFG.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

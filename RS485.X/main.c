@@ -87,8 +87,6 @@ void main(void)
         Set_Y_DataIntoBuffer(YAVG);
         Set_Z_DataIntoBuffer(ZAVG);
         //Set_T_DataIntoBuffer();
-        
-        
     }
 }
 
