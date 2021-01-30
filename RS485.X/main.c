@@ -9,14 +9,10 @@
 #include "ADXL_m.h"
 #include "average_calculations.h"
 
+void FinishBuffer(void);
+void (*ptrFinishBuffer)(void) = &FinishBuffer;
 
-void UART_Write(unsigned char data)
-{
-  while(!TRMT);
-  TXREG = data;
-}
-
-
+unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
     TRISC0 = 0;
@@ -31,8 +27,7 @@ void main(void)
     int id, pow, bw_rate;
     char XL,XH,YH,YL,ZH,ZL;
     short X, Y, Z;
-    unsigned short XAVG, YAVG, ZAVG;
-    int i;
+    
     system_init();
     UART_vidInit();
     
@@ -42,14 +37,10 @@ void main(void)
     ini_adxl345();
     
     id = E_Read(IDDV);  // should be 229 for ADXL1345
-    UART_Write(id);
     __delay_ms(10);
     pow = E_Read(0x2D);  //should be 8 to activate
-    UART_Write(pow);
     __delay_ms(10);
     bw_rate = E_Read(0x2C);  //BW_RATE 0x2C is 13
-    UART_Write(bw_rate);
-    
     
     while(1)
     {
@@ -82,13 +73,20 @@ void main(void)
         XAVG =  get_averageX(X);
         YAVG =  get_averageY(Y);
         ZAVG =  get_averageZ(Z);
-        // Buffer update 
-        Set_X_DataIntoBuffer(XAVG);
-        Set_Y_DataIntoBuffer(YAVG);
-        Set_Z_DataIntoBuffer(ZAVG);
-        //Set_T_DataIntoBuffer();
+        
+        AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
+        
+        AVG = get_average(AVG);      
     }
 }
-
+void FinishBuffer(void)
+{
+       // Buffer update 
+    Set_X_DataIntoBuffer(XAVG);
+    Set_Y_DataIntoBuffer(YAVG);
+    Set_Z_DataIntoBuffer(ZAVG);
+    Set_T_DataIntoBuffer(0x55);
+    Set_AVG_Vibration_DataIntoBuffer(AVG);
+}
 
 

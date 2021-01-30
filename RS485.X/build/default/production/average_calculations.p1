@@ -1417,9 +1417,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-[; ;average_calculations.h: 10: signed short get_averageX( signed short Data);
-[; ;average_calculations.h: 11: signed short get_averageY( signed short Data);
-[; ;average_calculations.h: 12: signed short get_averageZ( signed short Data);
+[; ;average_calculations.h: 10: short get_averageX(short Data);
+[; ;average_calculations.h: 11: short get_averageY(short Data);
+[; ;average_calculations.h: 12: short get_averageZ(short Data);
+[; ;average_calculations.h: 13: short get_average(short Data);
 "13 average_calculations.c
 [v _get_averageX `(s ~T0 @X0 1 ef1`s ]
 "14
@@ -1432,75 +1433,103 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14
 [f ]
 "15
-[v F1566 `s ~T0 @X0 1 s OutPut ]
-[i F1566
--> -> 0 `i `s
-]
-[; ;average_calculations.c: 15: static short OutPut = 0;
-[; ;average_calculations.c: 16: OutPut = (92 * Data + 8 * OutPut)/100;
-"16
-[e = F1566 -> / + * -> 92 `i -> _Data `i * -> 8 `i -> F1566 `i -> 100 `i `s ]
-[; ;average_calculations.c: 17: return OutPut;
-"17
-[e ) F1566 ]
-[e $UE 134  ]
-[; ;average_calculations.c: 19: }
-"19
-[e :UE 134 ]
-}
-"20
-[v _get_averageY `(s ~T0 @X0 1 ef1`s ]
-"21
-{
-[; ;average_calculations.c: 20: short get_averageY(short Data)
-[; ;average_calculations.c: 21: {
-[e :U _get_averageY ]
-"20
-[v _Data `s ~T0 @X0 1 r1 ]
-"21
-[f ]
-"22
 [v F1568 `s ~T0 @X0 1 s OutPut ]
 [i F1568
 -> -> 0 `i `s
 ]
-[; ;average_calculations.c: 22: static short OutPut = 0;
-[; ;average_calculations.c: 23: OutPut = (92 * Data + 8 * OutPut)/100;
-"23
-[e = F1568 -> / + * -> 92 `i -> _Data `i * -> 8 `i -> F1568 `i -> 100 `i `s ]
-[; ;average_calculations.c: 24: return OutPut;
-"24
+[; ;average_calculations.c: 15: static short OutPut = 0;
+[; ;average_calculations.c: 16: OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+"16
+[e = F1568 -> / + * -> -> 92 `i `l -> _Data `l * -> -> 8 `i `l -> F1568 `l -> -> 100 `i `l `s ]
+[; ;average_calculations.c: 17: return OutPut;
+"17
 [e ) F1568 ]
-[e $UE 135  ]
-[; ;average_calculations.c: 26: }
-"26
-[e :UE 135 ]
+[e $UE 134  ]
+[; ;average_calculations.c: 18: }
+"18
+[e :UE 134 ]
 }
-"27
-[v _get_averageZ `(s ~T0 @X0 1 ef1`s ]
-"28
+"19
+[v _get_averageY `(s ~T0 @X0 1 ef1`s ]
+"20
 {
-[; ;average_calculations.c: 27: short get_averageZ(short Data)
-[; ;average_calculations.c: 28: {
-[e :U _get_averageZ ]
-"27
+[; ;average_calculations.c: 19: short get_averageY(short Data)
+[; ;average_calculations.c: 20: {
+[e :U _get_averageY ]
+"19
 [v _Data `s ~T0 @X0 1 r1 ]
-"28
+"20
 [f ]
-"29
-[v F1570 `s ~T0 @X0 1 s OutPut ]
-[i F1570
+"21
+[v F1573 `s ~T0 @X0 1 s OutPut ]
+[i F1573
 -> -> 0 `i `s
 ]
-[; ;average_calculations.c: 29: static short OutPut = 0;
-[; ;average_calculations.c: 30: OutPut = (92 * Data + 8 * OutPut)/100;
-"30
-[e = F1570 -> / + * -> 92 `i -> _Data `i * -> 8 `i -> F1570 `i -> 100 `i `s ]
-[; ;average_calculations.c: 31: return OutPut;
-"31
-[e ) F1570 ]
+[; ;average_calculations.c: 21: static short OutPut = 0;
+[; ;average_calculations.c: 22: OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+"22
+[e = F1573 -> / + * -> -> 92 `i `l -> _Data `l * -> -> 8 `i `l -> F1573 `l -> -> 100 `i `l `s ]
+[; ;average_calculations.c: 23: return OutPut;
+"23
+[e ) F1573 ]
+[e $UE 135  ]
+[; ;average_calculations.c: 24: }
+"24
+[e :UE 135 ]
+}
+"25
+[v _get_averageZ `(s ~T0 @X0 1 ef1`s ]
+"26
+{
+[; ;average_calculations.c: 25: short get_averageZ(short Data)
+[; ;average_calculations.c: 26: {
+[e :U _get_averageZ ]
+"25
+[v _Data `s ~T0 @X0 1 r1 ]
+"26
+[f ]
+"27
+[v F1578 `s ~T0 @X0 1 s OutPut ]
+[i F1578
+-> -> 0 `i `s
+]
+[; ;average_calculations.c: 27: static short OutPut = 0;
+[; ;average_calculations.c: 28: OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+"28
+[e = F1578 -> / + * -> -> 92 `i `l -> _Data `l * -> -> 8 `i `l -> F1578 `l -> -> 100 `i `l `s ]
+[; ;average_calculations.c: 29: return OutPut;
+"29
+[e ) F1578 ]
 [e $UE 136  ]
-[; ;average_calculations.c: 33: }
-"33
+[; ;average_calculations.c: 30: }
+"30
 [e :UE 136 ]
+}
+"32
+[v _get_average `(s ~T0 @X0 1 ef1`s ]
+"33
+{
+[; ;average_calculations.c: 32: short get_average(short Data)
+[; ;average_calculations.c: 33: {
+[e :U _get_average ]
+"32
+[v _Data `s ~T0 @X0 1 r1 ]
+"33
+[f ]
+"34
+[v F1583 `s ~T0 @X0 1 s OutPut ]
+[i F1583
+-> -> 0 `i `s
+]
+[; ;average_calculations.c: 34: static short OutPut = 0;
+[; ;average_calculations.c: 35: OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+"35
+[e = F1583 -> / + * -> -> 92 `i `l -> _Data `l * -> -> 8 `i `l -> F1583 `l -> -> 100 `i `l `s ]
+[; ;average_calculations.c: 36: return OutPut;
+"36
+[e ) F1583 ]
+[e $UE 137  ]
+[; ;average_calculations.c: 37: }
+"37
+[e :UE 137 ]
 }

@@ -7,9 +7,10 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 
-signed short get_averageX( signed short Data);
-signed short get_averageY( signed short Data);
-signed short get_averageZ( signed short Data);
+short get_averageX(short Data);
+short get_averageY(short Data);
+short get_averageZ(short Data);
+short get_average(short Data);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

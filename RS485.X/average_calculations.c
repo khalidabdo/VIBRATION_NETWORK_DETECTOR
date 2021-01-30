@@ -13,21 +13,25 @@
 short get_averageX(short Data)
 {
     static short OutPut = 0;
-    OutPut = (92 * Data + 8 * OutPut)/100;
+    OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
     return OutPut;
-    
 }
 short get_averageY(short Data)
 {
     static short OutPut = 0;
-    OutPut = (92 * Data + 8 * OutPut)/100;
+    OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
     return OutPut;
-    
 }
 short get_averageZ(short Data)
 {
     static short OutPut = 0;
-    OutPut = (92 * Data + 8 * OutPut)/100;
+    OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
     return OutPut;
-    
+}
+
+short get_average(short Data)
+{
+    static short OutPut = 0;
+    OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+    return OutPut;
 }

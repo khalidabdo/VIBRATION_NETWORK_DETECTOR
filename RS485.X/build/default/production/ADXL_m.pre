@@ -2051,12 +2051,11 @@ void Delay_ms(unsigned char Delay);
 unsigned char ECU_ID;
 typedef union
 {
-unsigned char DATA_BUFFER[((unsigned char)10)];
+unsigned char DATA_BUFFER[((unsigned char)11)];
 struct
 {
 unsigned char ID : 7;
 unsigned char SwitchStatus : 1;
-unsigned char AVG_Vibration : 8;
 unsigned char T : 8;
 
 unsigned char HX : 8;
@@ -2067,6 +2066,9 @@ unsigned char LY : 8;
 
 unsigned char HZ : 8;
 unsigned char LZ : 8;
+
+unsigned char AVG_VibrationH : 8;
+unsigned char AVG_VibrationL : 8;
 
 unsigned char CRC : 8;
 };
@@ -2081,7 +2083,7 @@ RS485_BUFFER_SEND
 
 _DATA_BUFFER Data_Buffer;
 
-# 63
+# 66
 void UART_vidInit(void);
 
 void RS845_ManageState(void);

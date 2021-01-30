@@ -1992,29 +1992,34 @@ extern __bit __powerdown;
 extern __bit __timeout;
 
 # 10 "average_calculations.h"
-signed short get_averageX( signed short Data);
-signed short get_averageY( signed short Data);
-signed short get_averageZ( signed short Data);
+short get_averageX(short Data);
+short get_averageY(short Data);
+short get_averageZ(short Data);
+short get_average(short Data);
 
 # 13 "average_calculations.c"
 short get_averageX(short Data)
 {
 static short OutPut = 0;
-OutPut = (92 * Data + 8 * OutPut)/100;
+OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
 return OutPut;
-
 }
 short get_averageY(short Data)
 {
 static short OutPut = 0;
-OutPut = (92 * Data + 8 * OutPut)/100;
+OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
 return OutPut;
-
 }
 short get_averageZ(short Data)
 {
 static short OutPut = 0;
-OutPut = (92 * Data + 8 * OutPut)/100;
+OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
 return OutPut;
+}
 
+short get_average(short Data)
+{
+static short OutPut = 0;
+OutPut = (short)((92 * (long)Data + 8 * (long)OutPut)/100);
+return OutPut;
 }

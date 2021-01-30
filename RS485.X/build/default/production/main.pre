@@ -2015,12 +2015,11 @@ void Delay_ms(unsigned char Delay);
 unsigned char ECU_ID;
 typedef union
 {
-unsigned char DATA_BUFFER[((unsigned char)10)];
+unsigned char DATA_BUFFER[((unsigned char)11)];
 struct
 {
 unsigned char ID : 7;
 unsigned char SwitchStatus : 1;
-unsigned char AVG_Vibration : 8;
 unsigned char T : 8;
 
 unsigned char HX : 8;
@@ -2031,6 +2030,9 @@ unsigned char LY : 8;
 
 unsigned char HZ : 8;
 unsigned char LZ : 8;
+
+unsigned char AVG_VibrationH : 8;
+unsigned char AVG_VibrationL : 8;
 
 unsigned char CRC : 8;
 };
@@ -2045,7 +2047,7 @@ RS485_BUFFER_SEND
 
 _DATA_BUFFER Data_Buffer;
 
-# 63
+# 66
 void UART_vidInit(void);
 
 void RS845_ManageState(void);
@@ -2091,18 +2093,16 @@ char E_Write(int addr, unsigned char ch);
 unsigned char E_Read(int addr);
 
 # 10 "average_calculations.h"
-signed short get_averageX( signed short Data);
-signed short get_averageY( signed short Data);
-signed short get_averageZ( signed short Data);
+short get_averageX(short Data);
+short get_averageY(short Data);
+short get_averageZ(short Data);
+short get_average(short Data);
 
-# 13 "main.c"
-void UART_Write(unsigned char data)
-{
-while(!TRMT);
-TXREG = data;
-}
+# 12 "main.c"
+void FinishBuffer(void);
+void (*ptrFinishBuffer)(void) = &FinishBuffer;
 
-
+unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
 TRISC0 = 0;
@@ -2117,8 +2117,7 @@ void main(void)
 int id, pow, bw_rate;
 char XL,XH,YH,YL,ZH,ZL;
 short X, Y, Z;
-unsigned short XAVG, YAVG, ZAVG;
-int i;
+
 system_init();
 UART_vidInit();
 
@@ -2128,14 +2127,10 @@ I2CInit();
 ini_adxl345();
 
 id = E_Read(0);
-UART_Write(id);
 _delay((unsigned long)((10)*(20000000/4000.0)));
 pow = E_Read(0x2D);
-UART_Write(pow);
 _delay((unsigned long)((10)*(20000000/4000.0)));
 bw_rate = E_Read(0x2C);
-UART_Write(bw_rate);
-
 
 while(1)
 {
@@ -2169,12 +2164,18 @@ XAVG = get_averageX(X);
 YAVG = get_averageY(Y);
 ZAVG = get_averageZ(Z);
 
+AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
+
+AVG = get_average(AVG);
+}
+}
+void FinishBuffer(void)
+{
+
 Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
 Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
 Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
-
-
-
-}
+(Data_Buffer.T = 0x55);
+Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
 }
 

@@ -1,7 +1,10 @@
 
 # 1 "CRC8.c"
 
-# 10
+# 36 "CRC8.h"
+unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize);
+
+# 10 "CRC8.c"
 unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize)
 {
 unsigned char CRC = 0;

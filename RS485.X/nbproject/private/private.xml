@@ -3,9 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/FreeLance/RS485_Vibration/RS485.X/UART_m.c</file>
-            <file>file:/D:/FreeLance/RS485_Vibration/RS485.X/average_calculations.c</file>
-            <file>file:/D:/FreeLance/RS485_Vibration/RS485.X/main.c</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/UART_cfg.h</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/average_calculations.c</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/ADXL_cfg.h</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/average_calculations.h</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/main.c</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/UART_m.h</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/CRC8.h</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/CRC8.c</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/UART_m.c</file>
+            <file>file:/D:/FreeLance/VIBRATION_NETWORK_DETECTOR/RS485.X/CRC8_CFG.h</file>
         </group>
     </open-files>
 </project-private>

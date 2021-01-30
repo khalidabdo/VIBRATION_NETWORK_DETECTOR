@@ -2015,12 +2015,11 @@ void Delay_ms(unsigned char Delay);
 unsigned char ECU_ID;
 typedef union
 {
-unsigned char DATA_BUFFER[((unsigned char)10)];
+unsigned char DATA_BUFFER[((unsigned char)11)];
 struct
 {
 unsigned char ID : 7;
 unsigned char SwitchStatus : 1;
-unsigned char AVG_Vibration : 8;
 unsigned char T : 8;
 
 unsigned char HX : 8;
@@ -2031,6 +2030,9 @@ unsigned char LY : 8;
 
 unsigned char HZ : 8;
 unsigned char LZ : 8;
+
+unsigned char AVG_VibrationH : 8;
+unsigned char AVG_VibrationL : 8;
 
 unsigned char CRC : 8;
 };
@@ -2045,7 +2047,7 @@ RS485_BUFFER_SEND
 
 _DATA_BUFFER Data_Buffer;
 
-# 63
+# 66
 void UART_vidInit(void);
 
 void RS845_ManageState(void);
@@ -2058,6 +2060,8 @@ void UART_vidReceive(unsigned char* data);
 unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize);
 
 # 6 "UART_m.c"
+extern void (*ptrFinishBuffer)(void);
+
 unsigned char RECEIVED_ECU_ID[((unsigned char)1)];
 
 void UART_vidSend(unsigned char* const data,const unsigned short Len);
@@ -2090,6 +2094,8 @@ void interrupt UART_vidNewDataReceived()
 if(RCIF == 1)
 {
 GIE = 0;
+ptrFinishBuffer();
+Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],10);
 RS845_ManageState();
 GIE = 1;
 RCIF = 0;
@@ -2105,7 +2111,7 @@ void RS845_ManageState(void)
 {
 if(RCREG == (unsigned char)ECU_ID)
 {
-UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)10));
+UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)11));
 }
 else
 {
@@ -2126,5 +2132,5 @@ PIR1bits.TXIF = 0;
 
 unsigned char UART_u8GetNodeID(void)
 {
-return 0x35;
+return Data_Buffer.ID = 0x35;
 }

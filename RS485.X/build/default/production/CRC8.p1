@@ -1,4 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[; ;CRC8.h: 36: unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize);
 "10 CRC8.c
 [v _Get_CRC8 `(uc ~T0 @X0 1 ef2`*uc`uc ]
 "11
