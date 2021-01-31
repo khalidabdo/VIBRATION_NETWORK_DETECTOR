@@ -11,14 +11,20 @@
 
 void FinishBuffer(void);
 void (*ptrFinishBuffer)(void) = &FinishBuffer;
+unsigned short Get_Tempreture(void);
 
 unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
-    TRISC0 = 0;
-    TRISA = 0xFF;
+    OPTION_REGbits.nRBPU = 0;
+    TRISB = 0xFF;
+    WPUB = 0xFF;
     ADCON0 = 0x00;
     ANSEL = 0x00;
+    ANS3 = 1;
+    TRISA3 = 1;
+    ADCON0 = 0x0D;
+    ANSELH = 0x00;
 }
 
 
@@ -85,8 +91,16 @@ void FinishBuffer(void)
     Set_X_DataIntoBuffer(XAVG);
     Set_Y_DataIntoBuffer(YAVG);
     Set_Z_DataIntoBuffer(ZAVG);
-    Set_T_DataIntoBuffer(0x55);
+    Set_T_DataIntoBuffer(Get_Tempreture());
     Set_AVG_Vibration_DataIntoBuffer(AVG);
 }
 
-
+unsigned short Get_Tempreture(void)
+{
+    unsigned short Result = 0x0000;
+    
+    ADCON0 = 0x02;
+    __delay_ms(6);
+    Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
+    return Result;
+}

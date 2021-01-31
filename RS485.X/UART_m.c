@@ -38,7 +38,7 @@ void interrupt UART_vidNewDataReceived()
     {
         GIE = 0;
         ptrFinishBuffer();
-        Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],10);
+        Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE - 1);
         RS845_ManageState();
         GIE = 1;
         RCIF = 0;
@@ -75,5 +75,5 @@ void UART_vidSend(unsigned char* const data,const unsigned short Len)
 
 unsigned char UART_u8GetNodeID(void)
 {
-    return Data_Buffer.ID = 0x35;
+    return Data_Buffer.ID = (PORTB & 0x3F);
 }

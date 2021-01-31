@@ -6,7 +6,7 @@
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
+#pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
@@ -2015,12 +2015,13 @@ void Delay_ms(unsigned char Delay);
 unsigned char ECU_ID;
 typedef union
 {
-unsigned char DATA_BUFFER[((unsigned char)11)];
+unsigned char DATA_BUFFER[((unsigned char)12)];
 struct
 {
 unsigned char ID : 7;
 unsigned char SwitchStatus : 1;
-unsigned char T : 8;
+unsigned char HT : 8;
+unsigned char LT : 8;
 
 unsigned char HX : 8;
 unsigned char LX : 8;
@@ -2047,7 +2048,7 @@ RS485_BUFFER_SEND
 
 _DATA_BUFFER Data_Buffer;
 
-# 66
+# 68
 void UART_vidInit(void);
 
 void RS845_ManageState(void);
@@ -2061,7 +2062,7 @@ void UART_vidReceive(unsigned char* data);
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
+#pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
@@ -2101,14 +2102,20 @@ short get_average(short Data);
 # 12 "main.c"
 void FinishBuffer(void);
 void (*ptrFinishBuffer)(void) = &FinishBuffer;
+unsigned short Get_Tempreture(void);
 
 unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
-TRISC0 = 0;
-TRISA = 0xFF;
+OPTION_REGbits.nRBPU = 0;
+TRISB = 0xFF;
+WPUB = 0xFF;
 ADCON0 = 0x00;
 ANSEL = 0x00;
+ANS3 = 1;
+TRISA3 = 1;
+ADCON0 = 0x0D;
+ANSELH = 0x00;
 }
 
 
@@ -2175,7 +2182,16 @@ void FinishBuffer(void)
 Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
 Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
 Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
-(Data_Buffer.T = 0x55);
+Data_Buffer.HT = Get_Tempreture()>>8; Data_Buffer.LT = Get_Tempreture();
 Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
 }
 
+unsigned short Get_Tempreture(void)
+{
+unsigned short Result = 0x0000;
+
+ADCON0 = 0x02;
+_delay((unsigned long)((6)*(20000000/4000.0)));
+Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
+return Result;
+}

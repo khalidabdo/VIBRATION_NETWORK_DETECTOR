@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "18 UART_m.h
-[s S135 :7 `uc 1 :1 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
-[n S135 . ID SwitchStatus T HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
+[s S135 :7 `uc 1 :1 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
+[n S135 . ID SwitchStatus HT LT HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
 "15
-[u S134 `uc -> -> -> 11 `i `uc `ux `S135 1 ]
+[u S134 `uc -> -> -> 12 `i `uc `ux `S135 1 ]
 [n S134 . DATA_BUFFER . ]
 "3390 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _BRGH `Vb ~T0 @X0 0 e@1218 ]
@@ -31,19 +31,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UART_u8GetNodeID `(uc ~T0 @X0 0 ef ]
 "3710 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
-[v F1600 `(v ~T0 @X0 0 tf ]
+[v F1601 `(v ~T0 @X0 0 tf ]
 "6 UART_m.c
-[v _ptrFinishBuffer `*F1600 ~T0 @X0 0 e ]
+[v _ptrFinishBuffer `*F1601 ~T0 @X0 0 e ]
 "36 CRC8.h
 [v _Get_CRC8 `(uc ~T0 @X0 0 ef2`*uc`uc ]
-"68 UART_m.h
+"70 UART_m.h
 [v _RS845_ManageState `(v ~T0 @X0 0 ef ]
 "3682 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _RC0 `Vb ~T0 @X0 0 e@56 ]
 "1031
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-[v F1592 `*uc ~T0 @X0 1 t ]
-"70 UART_m.h
+[v F1593 `*uc ~T0 @X0 1 t ]
+"72 UART_m.h
 [v _UART_vidSend `(v ~T0 @X0 0 ef2`C*uc`Cus ]
 "450 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -55,6 +55,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS16 ~T0 @X0 0 e@12 ]
 "1025
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"219
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "14 system.h
 [p x FOSC=HS ]
 "15
@@ -62,7 +64,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "16
 [p x PWRTE=OFF ]
 "17
-[p x MCLRE=OFF ]
+[p x MCLRE=ON ]
 "18
 [p x CP=OFF ]
 "19
@@ -1503,36 +1505,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.h: 13: unsigned char ECU_ID;
 [; ;UART_m.h: 14: typedef union
 [; ;UART_m.h: 15: {
-[; ;UART_m.h: 16: unsigned char DATA_BUFFER[((unsigned char)11)];
+[; ;UART_m.h: 16: unsigned char DATA_BUFFER[((unsigned char)12)];
 [; ;UART_m.h: 17: struct
 [; ;UART_m.h: 18: {
 [; ;UART_m.h: 19: unsigned char ID : 7;
 [; ;UART_m.h: 20: unsigned char SwitchStatus : 1;
-[; ;UART_m.h: 21: unsigned char T : 8;
-[; ;UART_m.h: 23: unsigned char HX : 8;
-[; ;UART_m.h: 24: unsigned char LX : 8;
-[; ;UART_m.h: 26: unsigned char HY : 8;
-[; ;UART_m.h: 27: unsigned char LY : 8;
-[; ;UART_m.h: 29: unsigned char HZ : 8;
-[; ;UART_m.h: 30: unsigned char LZ : 8;
-[; ;UART_m.h: 32: unsigned char AVG_VibrationH : 8;
-[; ;UART_m.h: 33: unsigned char AVG_VibrationL : 8;
-[; ;UART_m.h: 35: unsigned char CRC : 8;
-[; ;UART_m.h: 36: };
-[; ;UART_m.h: 37: }_DATA_BUFFER;
-[; ;UART_m.h: 39: typedef enum
-[; ;UART_m.h: 40: {
-[; ;UART_m.h: 41: RS485_Init = 0,
-[; ;UART_m.h: 42: RS485_ID_CHECK,
-[; ;UART_m.h: 43: RS485_BUFFER_SEND
-[; ;UART_m.h: 44: }RS485_Stack_States;
-"46
+[; ;UART_m.h: 21: unsigned char HT : 8;
+[; ;UART_m.h: 22: unsigned char LT : 8;
+[; ;UART_m.h: 24: unsigned char HX : 8;
+[; ;UART_m.h: 25: unsigned char LX : 8;
+[; ;UART_m.h: 27: unsigned char HY : 8;
+[; ;UART_m.h: 28: unsigned char LY : 8;
+[; ;UART_m.h: 30: unsigned char HZ : 8;
+[; ;UART_m.h: 31: unsigned char LZ : 8;
+[; ;UART_m.h: 33: unsigned char AVG_VibrationH : 8;
+[; ;UART_m.h: 34: unsigned char AVG_VibrationL : 8;
+[; ;UART_m.h: 36: unsigned char CRC : 8;
+[; ;UART_m.h: 37: };
+[; ;UART_m.h: 38: }_DATA_BUFFER;
+[; ;UART_m.h: 40: typedef enum
+[; ;UART_m.h: 41: {
+[; ;UART_m.h: 42: RS485_Init = 0,
+[; ;UART_m.h: 43: RS485_ID_CHECK,
+[; ;UART_m.h: 44: RS485_BUFFER_SEND
+[; ;UART_m.h: 45: }RS485_Stack_States;
+"47
 [v _Data_Buffer `S134 ~T0 @X0 1 e ]
-[; ;UART_m.h: 46: _DATA_BUFFER Data_Buffer;
-[; ;UART_m.h: 66: void UART_vidInit(void);
-[; ;UART_m.h: 68: void RS845_ManageState(void);
-[; ;UART_m.h: 70: void UART_vidSend(unsigned char* const data,const unsigned short Len);
-[; ;UART_m.h: 72: void UART_vidReceive(unsigned char* data);
+[; ;UART_m.h: 47: _DATA_BUFFER Data_Buffer;
+[; ;UART_m.h: 68: void UART_vidInit(void);
+[; ;UART_m.h: 70: void RS845_ManageState(void);
+[; ;UART_m.h: 72: void UART_vidSend(unsigned char* const data,const unsigned short Len);
+[; ;UART_m.h: 74: void UART_vidReceive(unsigned char* data);
 [; ;CRC8.h: 36: unsigned char Get_CRC8(unsigned char Data[], unsigned char DataSize);
 [; ;UART_m.c: 6: extern void (*ptrFinishBuffer)(void);
 "8 UART_m.c
@@ -1589,9 +1592,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "33
 [e :UE 136 ]
 }
-[v F1614 `(v ~T0 @X0 1 tf ]
+[v F1615 `(v ~T0 @X0 1 tf ]
 "35
-[v _UART_vidNewDataReceived `IF1614 ~T0 @X0 1 e ]
+[v _UART_vidNewDataReceived `IF1615 ~T0 @X0 1 e ]
 "36
 {
 [; ;UART_m.c: 35: void interrupt UART_vidNewDataReceived()
@@ -1610,9 +1613,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.c: 40: ptrFinishBuffer();
 "40
 [e ( *U _ptrFinishBuffer ..  ]
-[; ;UART_m.c: 41: Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],10);
+[; ;UART_m.c: 41: Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12) - 1);
 "41
-[e = . . _Data_Buffer 1 11 ( _Get_CRC8 (2 , &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux -> -> 10 `i `uc ]
+[e = . . _Data_Buffer 1 12 ( _Get_CRC8 (2 , &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux -> - -> -> -> 12 `i `uc `i -> 1 `i `uc ]
 [; ;UART_m.c: 42: RS845_ManageState();
 "42
 [e ( _RS845_ManageState ..  ]
@@ -1657,9 +1660,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.c: 56: {
 "56
 {
-[; ;UART_m.c: 57: UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)11));
+[; ;UART_m.c: 57: UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12));
 "57
-[e ( _UART_vidSend (2 , -> &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux `C*uc -> -> -> 11 `i `uc `us ]
+[e ( _UART_vidSend (2 , -> &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux `C*uc -> -> -> 12 `i `uc `us ]
 "58
 }
 [; ;UART_m.c: 58: }
@@ -1685,7 +1688,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.c: 64: void UART_vidSend(unsigned char* const data,const unsigned short Len)
 [; ;UART_m.c: 65: {
 [e :U _UART_vidSend ]
-[v F1619 `*uc ~T0 @X0 1 t ]
+[v F1621 `*uc ~T0 @X0 1 t ]
 "64
 [v _data `C*uc ~T0 @X0 1 r1 ]
 [v _Len `Cus ~T0 @X0 1 r2 ]
@@ -1739,9 +1742,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.c: 77: {
 [e :U _UART_u8GetNodeID ]
 [f ]
-[; ;UART_m.c: 78: return Data_Buffer.ID = 0x35;
+[; ;UART_m.c: 78: return Data_Buffer.ID = (PORTB & 0x3F);
 "78
-[e ) = . . _Data_Buffer 1 0 -> -> 53 `i `uc ]
+[e ) = . . _Data_Buffer 1 0 -> & -> _PORTB `i -> 63 `i `uc ]
 [e $UE 150  ]
 [; ;UART_m.c: 79: }
 "79

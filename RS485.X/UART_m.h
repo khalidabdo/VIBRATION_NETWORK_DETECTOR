@@ -18,7 +18,8 @@ typedef union
 	{
         unsigned char ID : 7;
         unsigned char SwitchStatus : 1;
-        unsigned char T : 8;
+        unsigned char HT : 8;
+        unsigned char LT : 8;
         
 		unsigned char HX : 8;
         unsigned char LX : 8;
@@ -57,7 +58,8 @@ _DATA_BUFFER Data_Buffer;
 #define Set_AVG_Vibration_DataIntoBuffer(Data) Data_Buffer.AVG_VibrationH = Data>>8; \
                                    Data_Buffer.AVG_VibrationL = Data
 
-#define Set_T_DataIntoBuffer(Data) (Data_Buffer.T = Data)
+#define Set_T_DataIntoBuffer(Data) Data_Buffer.HT = Data>>8;\
+                                   Data_Buffer.LT = Data
 
 #define Set_SwitchStatus_DataIntoBuffer(Data) (Data_Buffer.SwitchStatus = Data)
 

@@ -6,7 +6,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "16
 [p x PWRTE=OFF ]
 "17
-[p x MCLRE=OFF ]
+[p x MCLRE=ON ]
 "18
 [p x CP=OFF ]
 "19

@@ -1,23 +1,40 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "18 UART_m.h
-[s S135 :7 `uc 1 :1 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
-[n S135 . ID SwitchStatus T HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
+[s S135 :7 `uc 1 :1 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
+[n S135 . ID SwitchStatus HT LT HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
 "15
-[u S134 `uc -> -> -> 11 `i `uc `ux `S135 1 ]
+[u S134 `uc -> -> -> 12 `i `uc `ux `S135 1 ]
 [n S134 . DATA_BUFFER . ]
-[v F1627 `(v ~T0 @X0 0 tf ]
+[v F1628 `(v ~T0 @X0 0 tf ]
 "12 main.c
 [v _FinishBuffer `(v ~T0 @X0 0 ef ]
-"3870 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
-[v _TRISC0 `Vb ~T0 @X0 0 e@1080 ]
-"1299
-[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1236 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
+[s S48 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S48 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1244
+[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S49 . PS0 PS1 PS2 ]
+"1235
+[u S47 `S48 1 `S49 1 ]
+[n S47 . . . ]
+"1250
+[v _OPTION_REGbits `VS47 ~T0 @X0 0 e@129 ]
+"1360
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"2136
+[v _WPUB `Vuc ~T0 @X0 0 e@149 ]
 "1130
 [v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
 "3156
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3342
+[v _ANS3 `Vb ~T0 @X0 0 e@3139 ]
+"3844
+[v _TRISA3 `Vb ~T0 @X0 0 e@1067 ]
+"3199
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 [p mainexit ]
-"66 UART_m.h
+"68 UART_m.h
 [v _UART_vidInit `(v ~T0 @X0 0 ef ]
 "14 ADXL_m.h
 [v _I2CInit `(v ~T0 @X0 0 ef ]
@@ -51,6 +68,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _get_averageZ `(s ~T0 @X0 0 ef1`s ]
 "13
 [v _get_average `(s ~T0 @X0 0 ef1`s ]
+"14 main.c
+[v _Get_Tempreture `(us ~T0 @X0 0 ef ]
+"1124 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"2751
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
 "14 system.h
 [p x FOSC=HS ]
 "15
@@ -58,7 +81,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "16
 [p x PWRTE=OFF ]
 "17
-[p x MCLRE=OFF ]
+[p x MCLRE=ON ]
 "18
 [p x CP=OFF ]
 "19
@@ -1499,36 +1522,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.h: 13: unsigned char ECU_ID;
 [; ;UART_m.h: 14: typedef union
 [; ;UART_m.h: 15: {
-[; ;UART_m.h: 16: unsigned char DATA_BUFFER[((unsigned char)11)];
+[; ;UART_m.h: 16: unsigned char DATA_BUFFER[((unsigned char)12)];
 [; ;UART_m.h: 17: struct
 [; ;UART_m.h: 18: {
 [; ;UART_m.h: 19: unsigned char ID : 7;
 [; ;UART_m.h: 20: unsigned char SwitchStatus : 1;
-[; ;UART_m.h: 21: unsigned char T : 8;
-[; ;UART_m.h: 23: unsigned char HX : 8;
-[; ;UART_m.h: 24: unsigned char LX : 8;
-[; ;UART_m.h: 26: unsigned char HY : 8;
-[; ;UART_m.h: 27: unsigned char LY : 8;
-[; ;UART_m.h: 29: unsigned char HZ : 8;
-[; ;UART_m.h: 30: unsigned char LZ : 8;
-[; ;UART_m.h: 32: unsigned char AVG_VibrationH : 8;
-[; ;UART_m.h: 33: unsigned char AVG_VibrationL : 8;
-[; ;UART_m.h: 35: unsigned char CRC : 8;
-[; ;UART_m.h: 36: };
-[; ;UART_m.h: 37: }_DATA_BUFFER;
-[; ;UART_m.h: 39: typedef enum
-[; ;UART_m.h: 40: {
-[; ;UART_m.h: 41: RS485_Init = 0,
-[; ;UART_m.h: 42: RS485_ID_CHECK,
-[; ;UART_m.h: 43: RS485_BUFFER_SEND
-[; ;UART_m.h: 44: }RS485_Stack_States;
-"46
+[; ;UART_m.h: 21: unsigned char HT : 8;
+[; ;UART_m.h: 22: unsigned char LT : 8;
+[; ;UART_m.h: 24: unsigned char HX : 8;
+[; ;UART_m.h: 25: unsigned char LX : 8;
+[; ;UART_m.h: 27: unsigned char HY : 8;
+[; ;UART_m.h: 28: unsigned char LY : 8;
+[; ;UART_m.h: 30: unsigned char HZ : 8;
+[; ;UART_m.h: 31: unsigned char LZ : 8;
+[; ;UART_m.h: 33: unsigned char AVG_VibrationH : 8;
+[; ;UART_m.h: 34: unsigned char AVG_VibrationL : 8;
+[; ;UART_m.h: 36: unsigned char CRC : 8;
+[; ;UART_m.h: 37: };
+[; ;UART_m.h: 38: }_DATA_BUFFER;
+[; ;UART_m.h: 40: typedef enum
+[; ;UART_m.h: 41: {
+[; ;UART_m.h: 42: RS485_Init = 0,
+[; ;UART_m.h: 43: RS485_ID_CHECK,
+[; ;UART_m.h: 44: RS485_BUFFER_SEND
+[; ;UART_m.h: 45: }RS485_Stack_States;
+"47
 [v _Data_Buffer `S134 ~T0 @X0 1 e ]
-[; ;UART_m.h: 46: _DATA_BUFFER Data_Buffer;
-[; ;UART_m.h: 66: void UART_vidInit(void);
-[; ;UART_m.h: 68: void RS845_ManageState(void);
-[; ;UART_m.h: 70: void UART_vidSend(unsigned char* const data,const unsigned short Len);
-[; ;UART_m.h: 72: void UART_vidReceive(unsigned char* data);
+[; ;UART_m.h: 47: _DATA_BUFFER Data_Buffer;
+[; ;UART_m.h: 68: void UART_vidInit(void);
+[; ;UART_m.h: 70: void RS845_ManageState(void);
+[; ;UART_m.h: 72: void UART_vidSend(unsigned char* const data,const unsigned short Len);
+[; ;UART_m.h: 74: void UART_vidReceive(unsigned char* data);
 [; ;system.h: 35: void Delay_ms(unsigned char Delay);
 [; ;ADXL_m.h: 14: void I2CInit(void);
 [; ;ADXL_m.h: 15: void I2CStart();
@@ -1548,220 +1572,266 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;average_calculations.h: 13: short get_average(short Data);
 [; ;main.c: 12: void FinishBuffer(void);
 "13 main.c
-[v _ptrFinishBuffer `*F1627 ~T0 @X0 1 e ]
+[v _ptrFinishBuffer `*F1628 ~T0 @X0 1 e ]
 [i _ptrFinishBuffer
 &U _FinishBuffer
 ]
 [; ;main.c: 13: void (*ptrFinishBuffer)(void) = &FinishBuffer;
-"15
+[; ;main.c: 14: unsigned short Get_Tempreture(void);
+"16
 [v _XAVG `us ~T0 @X0 1 e ]
 [v _YAVG `us ~T0 @X0 1 e ]
 [v _ZAVG `us ~T0 @X0 1 e ]
 [v _AVG `us ~T0 @X0 1 e ]
-[; ;main.c: 15: unsigned short XAVG, YAVG, ZAVG, AVG;
-"16
-[v _system_init `(v ~T0 @X0 1 ef ]
+[; ;main.c: 16: unsigned short XAVG, YAVG, ZAVG, AVG;
 "17
+[v _system_init `(v ~T0 @X0 1 ef ]
+"18
 {
-[; ;main.c: 16: void system_init(void)
-[; ;main.c: 17: {
+[; ;main.c: 17: void system_init(void)
+[; ;main.c: 18: {
 [e :U _system_init ]
 [f ]
-[; ;main.c: 18: TRISC0 = 0;
-"18
-[e = _TRISC0 -> -> 0 `i `b ]
-[; ;main.c: 19: TRISA = 0xFF;
+[; ;main.c: 19: OPTION_REGbits.nRBPU = 0;
 "19
-[e = _TRISA -> -> 255 `i `uc ]
-[; ;main.c: 20: ADCON0 = 0x00;
+[e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 20: TRISB = 0xFF;
 "20
-[e = _ADCON0 -> -> 0 `i `uc ]
-[; ;main.c: 21: ANSEL = 0x00;
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;main.c: 21: WPUB = 0xFF;
 "21
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 22: }
+[e = _WPUB -> -> 255 `i `uc ]
+[; ;main.c: 22: ADCON0 = 0x00;
 "22
+[e = _ADCON0 -> -> 0 `i `uc ]
+[; ;main.c: 23: ANSEL = 0x00;
+"23
+[e = _ANSEL -> -> 0 `i `uc ]
+[; ;main.c: 24: ANS3 = 1;
+"24
+[e = _ANS3 -> -> 1 `i `b ]
+[; ;main.c: 25: TRISA3 = 1;
+"25
+[e = _TRISA3 -> -> 1 `i `b ]
+[; ;main.c: 26: ADCON0 = 0x0D;
+"26
+[e = _ADCON0 -> -> 13 `i `uc ]
+[; ;main.c: 27: ANSELH = 0x00;
+"27
+[e = _ANSELH -> -> 0 `i `uc ]
+[; ;main.c: 28: }
+"28
 [e :UE 136 ]
 }
-"25
+"31
 [v _main `(v ~T0 @X0 1 ef ]
-"26
+"32
 {
-[; ;main.c: 25: void main(void)
-[; ;main.c: 26: {
+[; ;main.c: 31: void main(void)
+[; ;main.c: 32: {
 [e :U _main ]
 [f ]
-"27
+"33
 [v _id `i ~T0 @X0 1 a ]
 [v _pow `i ~T0 @X0 1 a ]
 [v _bw_rate `i ~T0 @X0 1 a ]
-"28
+"34
 [v _XL `uc ~T0 @X0 1 a ]
 [v _XH `uc ~T0 @X0 1 a ]
 [v _YH `uc ~T0 @X0 1 a ]
 [v _YL `uc ~T0 @X0 1 a ]
 [v _ZH `uc ~T0 @X0 1 a ]
 [v _ZL `uc ~T0 @X0 1 a ]
-"29
+"35
 [v _X `s ~T0 @X0 1 a ]
 [v _Y `s ~T0 @X0 1 a ]
 [v _Z `s ~T0 @X0 1 a ]
-[; ;main.c: 27: int id, pow, bw_rate;
-[; ;main.c: 28: char XL,XH,YH,YL,ZH,ZL;
-[; ;main.c: 29: short X, Y, Z;
-[; ;main.c: 31: system_init();
-"31
-[e ( _system_init ..  ]
-[; ;main.c: 32: UART_vidInit();
-"32
-[e ( _UART_vidInit ..  ]
-[; ;main.c: 35: I2CInit();
-"35
-[e ( _I2CInit ..  ]
-[; ;main.c: 37: ini_adxl345();
+[; ;main.c: 33: int id, pow, bw_rate;
+[; ;main.c: 34: char XL,XH,YH,YL,ZH,ZL;
+[; ;main.c: 35: short X, Y, Z;
+[; ;main.c: 37: system_init();
 "37
-[e ( _ini_adxl345 ..  ]
-[; ;main.c: 39: id = E_Read(0);
-"39
-[e = _id -> ( _E_Read (1 -> 0 `i `i ]
-[; ;main.c: 40: _delay((unsigned long)((10)*(20000000/4000.0)));
-"40
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 41: pow = E_Read(0x2D);
+[e ( _system_init ..  ]
+[; ;main.c: 38: UART_vidInit();
+"38
+[e ( _UART_vidInit ..  ]
+[; ;main.c: 41: I2CInit();
 "41
-[e = _pow -> ( _E_Read (1 -> 45 `i `i ]
-[; ;main.c: 42: _delay((unsigned long)((10)*(20000000/4000.0)));
-"42
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 43: bw_rate = E_Read(0x2C);
+[e ( _I2CInit ..  ]
+[; ;main.c: 43: ini_adxl345();
 "43
-[e = _bw_rate -> ( _E_Read (1 -> 44 `i `i ]
-[; ;main.c: 45: while(1)
+[e ( _ini_adxl345 ..  ]
+[; ;main.c: 45: id = E_Read(0);
 "45
-[e :U 139 ]
-[; ;main.c: 46: {
+[e = _id -> ( _E_Read (1 -> 0 `i `i ]
+[; ;main.c: 46: _delay((unsigned long)((10)*(20000000/4000.0)));
 "46
-{
-[; ;main.c: 47: X = Y = Z = 0;
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 47: pow = E_Read(0x2D);
 "47
-[e = _X = _Y = _Z -> -> 0 `i `s ]
-[; ;main.c: 49: I2CStart();
+[e = _pow -> ( _E_Read (1 -> 45 `i `i ]
+[; ;main.c: 48: _delay((unsigned long)((10)*(20000000/4000.0)));
+"48
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 49: bw_rate = E_Read(0x2C);
 "49
-[e ( _I2CStart ..  ]
-[; ;main.c: 50: I2CSend(0xA6);
-"50
-[e ( _I2CSend (1 -> -> 166 `i `uc ]
-[; ;main.c: 51: I2CSend(50);
+[e = _bw_rate -> ( _E_Read (1 -> 44 `i `i ]
+[; ;main.c: 51: while(1)
 "51
-[e ( _I2CSend (1 -> -> 50 `i `uc ]
-[; ;main.c: 52: I2CRestart();
+[e :U 139 ]
+[; ;main.c: 52: {
 "52
-[e ( _I2CRestart ..  ]
-[; ;main.c: 53: I2CSend(0xA7);
+{
+[; ;main.c: 53: X = Y = Z = 0;
 "53
-[e ( _I2CSend (1 -> -> 167 `i `uc ]
-[; ;main.c: 54: XL = I2CRead();
-"54
-[e = _XL ( _I2CRead ..  ]
-[; ;main.c: 55: I2CAck();
+[e = _X = _Y = _Z -> -> 0 `i `s ]
+[; ;main.c: 55: I2CStart();
 "55
-[e ( _I2CAck ..  ]
-[; ;main.c: 56: XH = I2CRead();
+[e ( _I2CStart ..  ]
+[; ;main.c: 56: I2CSend(0xA6);
 "56
-[e = _XH ( _I2CRead ..  ]
-[; ;main.c: 57: I2CAck();
+[e ( _I2CSend (1 -> -> 166 `i `uc ]
+[; ;main.c: 57: I2CSend(50);
 "57
-[e ( _I2CAck ..  ]
-[; ;main.c: 58: YL = I2CRead();
+[e ( _I2CSend (1 -> -> 50 `i `uc ]
+[; ;main.c: 58: I2CRestart();
 "58
-[e = _YL ( _I2CRead ..  ]
-[; ;main.c: 59: I2CAck();
+[e ( _I2CRestart ..  ]
+[; ;main.c: 59: I2CSend(0xA7);
 "59
-[e ( _I2CAck ..  ]
-[; ;main.c: 60: YH = I2CRead();
+[e ( _I2CSend (1 -> -> 167 `i `uc ]
+[; ;main.c: 60: XL = I2CRead();
 "60
-[e = _YH ( _I2CRead ..  ]
+[e = _XL ( _I2CRead ..  ]
 [; ;main.c: 61: I2CAck();
 "61
 [e ( _I2CAck ..  ]
-[; ;main.c: 62: ZL = I2CRead();
+[; ;main.c: 62: XH = I2CRead();
 "62
-[e = _ZL ( _I2CRead ..  ]
+[e = _XH ( _I2CRead ..  ]
 [; ;main.c: 63: I2CAck();
 "63
 [e ( _I2CAck ..  ]
-[; ;main.c: 64: ZH = I2CRead();
+[; ;main.c: 64: YL = I2CRead();
 "64
-[e = _ZH ( _I2CRead ..  ]
-[; ;main.c: 65: I2CNak();
+[e = _YL ( _I2CRead ..  ]
+[; ;main.c: 65: I2CAck();
 "65
-[e ( _I2CNak ..  ]
-[; ;main.c: 66: I2CStop();
+[e ( _I2CAck ..  ]
+[; ;main.c: 66: YH = I2CRead();
 "66
-[e ( _I2CStop ..  ]
-[; ;main.c: 68: X = ((XH<<8) | XL);
+[e = _YH ( _I2CRead ..  ]
+[; ;main.c: 67: I2CAck();
+"67
+[e ( _I2CAck ..  ]
+[; ;main.c: 68: ZL = I2CRead();
 "68
-[e = _X -> | << -> _XH `i -> 8 `i -> _XL `i `s ]
-[; ;main.c: 69: Y = ((YH<<8) | YL);
+[e = _ZL ( _I2CRead ..  ]
+[; ;main.c: 69: I2CAck();
 "69
-[e = _Y -> | << -> _YH `i -> 8 `i -> _YL `i `s ]
-[; ;main.c: 70: Z = ((ZH<<8) | ZL);
+[e ( _I2CAck ..  ]
+[; ;main.c: 70: ZH = I2CRead();
 "70
-[e = _Z -> | << -> _ZH `i -> 8 `i -> _ZL `i `s ]
-[; ;main.c: 73: XAVG = get_averageX(X);
-"73
-[e = _XAVG -> ( _get_averageX (1 _X `us ]
-[; ;main.c: 74: YAVG = get_averageY(Y);
+[e = _ZH ( _I2CRead ..  ]
+[; ;main.c: 71: I2CNak();
+"71
+[e ( _I2CNak ..  ]
+[; ;main.c: 72: I2CStop();
+"72
+[e ( _I2CStop ..  ]
+[; ;main.c: 74: X = ((XH<<8) | XL);
 "74
-[e = _YAVG -> ( _get_averageY (1 _Y `us ]
-[; ;main.c: 75: ZAVG = get_averageZ(Z);
+[e = _X -> | << -> _XH `i -> 8 `i -> _XL `i `s ]
+[; ;main.c: 75: Y = ((YH<<8) | YL);
 "75
-[e = _ZAVG -> ( _get_averageZ (1 _Z `us ]
-[; ;main.c: 77: AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
-"77
-[e = _AVG -> + + / -> _XAVG `ui -> -> 3 `i `ui / -> _YAVG `ui -> -> 3 `i `ui / -> _ZAVG `ui -> -> 3 `i `ui `us ]
-[; ;main.c: 79: AVG = get_average(AVG);
+[e = _Y -> | << -> _YH `i -> 8 `i -> _YL `i `s ]
+[; ;main.c: 76: Z = ((ZH<<8) | ZL);
+"76
+[e = _Z -> | << -> _ZH `i -> 8 `i -> _ZL `i `s ]
+[; ;main.c: 79: XAVG = get_averageX(X);
 "79
-[e = _AVG -> ( _get_average (1 -> _AVG `s `us ]
+[e = _XAVG -> ( _get_averageX (1 _X `us ]
+[; ;main.c: 80: YAVG = get_averageY(Y);
 "80
+[e = _YAVG -> ( _get_averageY (1 _Y `us ]
+[; ;main.c: 81: ZAVG = get_averageZ(Z);
+"81
+[e = _ZAVG -> ( _get_averageZ (1 _Z `us ]
+[; ;main.c: 83: AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
+"83
+[e = _AVG -> + + / -> _XAVG `ui -> -> 3 `i `ui / -> _YAVG `ui -> -> 3 `i `ui / -> _ZAVG `ui -> -> 3 `i `ui `us ]
+[; ;main.c: 85: AVG = get_average(AVG);
+"85
+[e = _AVG -> ( _get_average (1 -> _AVG `s `us ]
+"86
 }
 [e :U 138 ]
-"45
+"51
 [e $U 139  ]
 [e :U 140 ]
-[; ;main.c: 80: }
-[; ;main.c: 81: }
-"81
+[; ;main.c: 86: }
+[; ;main.c: 87: }
+"87
 [e :UE 137 ]
 }
-"82
+"88
 [v _FinishBuffer `(v ~T0 @X0 1 ef ]
-"83
+"89
 {
-[; ;main.c: 82: void FinishBuffer(void)
-[; ;main.c: 83: {
+[; ;main.c: 88: void FinishBuffer(void)
+[; ;main.c: 89: {
 [e :U _FinishBuffer ]
 [f ]
-[; ;main.c: 85: Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
-"85
-[e = . . _Data_Buffer 1 3 -> >> -> _XAVG `ui -> 8 `i `uc ]
-[e = . . _Data_Buffer 1 4 -> _XAVG `uc ]
-[; ;main.c: 86: Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
-"86
-[e = . . _Data_Buffer 1 5 -> >> -> _YAVG `ui -> 8 `i `uc ]
-[e = . . _Data_Buffer 1 6 -> _YAVG `uc ]
-[; ;main.c: 87: Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
-"87
-[e = . . _Data_Buffer 1 7 -> >> -> _ZAVG `ui -> 8 `i `uc ]
-[e = . . _Data_Buffer 1 8 -> _ZAVG `uc ]
-[; ;main.c: 88: (Data_Buffer.T = 0x55);
-"88
-[e = . . _Data_Buffer 1 2 -> -> 85 `i `uc ]
-[; ;main.c: 89: Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
-"89
-[e = . . _Data_Buffer 1 9 -> >> -> _AVG `ui -> 8 `i `uc ]
-[e = . . _Data_Buffer 1 10 -> _AVG `uc ]
-[; ;main.c: 90: }
-"90
+[; ;main.c: 91: Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
+"91
+[e = . . _Data_Buffer 1 4 -> >> -> _XAVG `ui -> 8 `i `uc ]
+[e = . . _Data_Buffer 1 5 -> _XAVG `uc ]
+[; ;main.c: 92: Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
+"92
+[e = . . _Data_Buffer 1 6 -> >> -> _YAVG `ui -> 8 `i `uc ]
+[e = . . _Data_Buffer 1 7 -> _YAVG `uc ]
+[; ;main.c: 93: Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
+"93
+[e = . . _Data_Buffer 1 8 -> >> -> _ZAVG `ui -> 8 `i `uc ]
+[e = . . _Data_Buffer 1 9 -> _ZAVG `uc ]
+[; ;main.c: 94: Data_Buffer.HT = Get_Tempreture()>>8; Data_Buffer.LT = Get_Tempreture();
+"94
+[e = . . _Data_Buffer 1 2 -> >> -> ( _Get_Tempreture ..  `ui -> 8 `i `uc ]
+[e = . . _Data_Buffer 1 3 -> ( _Get_Tempreture ..  `uc ]
+[; ;main.c: 95: Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
+"95
+[e = . . _Data_Buffer 1 10 -> >> -> _AVG `ui -> 8 `i `uc ]
+[e = . . _Data_Buffer 1 11 -> _AVG `uc ]
+[; ;main.c: 96: }
+"96
 [e :UE 141 ]
+}
+"98
+[v _Get_Tempreture `(us ~T0 @X0 1 ef ]
+"99
+{
+[; ;main.c: 98: unsigned short Get_Tempreture(void)
+[; ;main.c: 99: {
+[e :U _Get_Tempreture ]
+[f ]
+"100
+[v _Result `us ~T0 @X0 1 a ]
+[; ;main.c: 100: unsigned short Result = 0x0000;
+[e = _Result -> -> 0 `i `us ]
+[; ;main.c: 102: ADCON0 = 0x02;
+"102
+[e = _ADCON0 -> -> 2 `i `uc ]
+[; ;main.c: 103: _delay((unsigned long)((6)*(20000000/4000.0)));
+"103
+[e ( __delay (1 -> * -> -> 6 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 104: Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
+"104
+[e = _Result -> | << -> -> _ADRESH `us `ui -> 2 `i >> -> -> _ADRESL `us `ui -> 6 `i `us ]
+[; ;main.c: 105: return Result;
+"105
+[e ) _Result ]
+[e $UE 142  ]
+[; ;main.c: 106: }
+"106
+[e :UE 142 ]
 }

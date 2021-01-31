@@ -6,7 +6,7 @@
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
+#pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
@@ -2032,7 +2032,7 @@ unsigned char E_Read(int addr);
 #pragma config FOSC = HS
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
+#pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = OFF
@@ -2051,12 +2051,13 @@ void Delay_ms(unsigned char Delay);
 unsigned char ECU_ID;
 typedef union
 {
-unsigned char DATA_BUFFER[((unsigned char)11)];
+unsigned char DATA_BUFFER[((unsigned char)12)];
 struct
 {
 unsigned char ID : 7;
 unsigned char SwitchStatus : 1;
-unsigned char T : 8;
+unsigned char HT : 8;
+unsigned char LT : 8;
 
 unsigned char HX : 8;
 unsigned char LX : 8;
@@ -2083,7 +2084,7 @@ RS485_BUFFER_SEND
 
 _DATA_BUFFER Data_Buffer;
 
-# 66
+# 68
 void UART_vidInit(void);
 
 void RS845_ManageState(void);
