@@ -7,13 +7,13 @@ extern void (*ptrFinishBuffer)(void);
 
 unsigned char RECEIVED_ECU_ID[MAX_ALLOWED_RECEIVED_ID];
 
-void UART_vidSend(unsigned char* const data,const unsigned short Len);
+static void UART_vidSend(unsigned char const * const data,const unsigned char Len);
 
-void UART_vidReceive(unsigned char* data);
+static void RS845_ManageState(void);
 
 unsigned char UART_u8GetNodeID(void);
 
-
+unsigned char ECU_ID;
 
 void UART_vidInit(void)
 {
@@ -42,7 +42,6 @@ void interrupt UART_vidNewDataReceived()
         RS845_ManageState();
         GIE = 1;
         RCIF = 0;
-        RC0 ^= 1;
     }
     else
     {
@@ -50,7 +49,7 @@ void interrupt UART_vidNewDataReceived()
     }
 }
 
-void RS845_ManageState(void)
+static void RS845_ManageState(void)
 {
     if(RCREG == (unsigned char)ECU_ID)
     {
@@ -61,7 +60,7 @@ void RS845_ManageState(void)
         /* Do nothing */
     }
 }
-void UART_vidSend(unsigned char* const data,const unsigned short Len)
+static void UART_vidSend(unsigned char const * const data,const unsigned char Len)
 {
     unsigned short UART_u16Index = 0;
 
@@ -74,6 +73,7 @@ void UART_vidSend(unsigned char* const data,const unsigned short Len)
 }  
 
 unsigned char UART_u8GetNodeID(void)
-{
-    return Data_Buffer.ID = (PORTB & 0x3F);
+{ 
+    Data_Buffer.ID = (PORTB & 0x7F);
+    return Data_Buffer.ID;
 }

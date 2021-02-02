@@ -53,25 +53,25 @@
 [v _Get_CRC8 Get_CRC8 `(uc  1 e 1 0 ]
 "17 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _system_init system_init `(v  1 e 1 0 ]
-"31
+"29
 [v _main main `(v  1 e 1 0 ]
-"88
+"86
 [v _FinishBuffer FinishBuffer `(v  1 e 1 0 ]
-"98
+"96
 [v _Get_Tempreture Get_Tempreture `(us  1 e 2 0 ]
 "18 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _UART_vidInit UART_vidInit `(v  1 e 1 0 ]
 "35
 [v _UART_vidNewDataReceived UART_vidNewDataReceived `II(v  1 e 1 0 ]
-"53
-[v _RS845_ManageState RS845_ManageState `(v  1 e 1 0 ]
-"64
-[v _UART_vidSend UART_vidSend `(v  1 e 1 0 ]
-"76
+"52
+[v _RS845_ManageState RS845_ManageState `(v  1 s 1 RS845_ManageState ]
+"63
+[v _UART_vidSend UART_vidSend `(v  1 s 1 UART_vidSend ]
+"75
 [v _UART_u8GetNodeID UART_u8GetNodeID `(uc  1 e 1 0 ]
 "219 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S265 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S258 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -80,9 +80,9 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "460
-[u S273 . 1 `S265 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES273  1 e 1 @12 ]
-[s S368 . 1 `uc 1 CCP2IF 1 0 :1:0 
+[u S266 . 1 `S258 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES266  1 e 1 @12 ]
+[s S360 . 1 `uc 1 CCP2IF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ULPWUIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -92,8 +92,8 @@
 `uc 1 OSFIF 1 0 :1:7 
 ]
 "516
-[u S377 . 1 `S368 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES377  1 e 1 @13 ]
+[u S369 . 1 `S360 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES369  1 e 1 @13 ]
 "742
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "748
@@ -122,7 +122,7 @@
 [v _OPTION_REGbits OPTION_REGbits `VES52  1 e 1 @129 ]
 "1360
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S332 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S324 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -132,8 +132,8 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1438
-[u S341 . 1 `S332 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES341  1 e 1 @135 ]
+[u S333 . 1 `S324 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES333  1 e 1 @135 ]
 "1774
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
 "1841
@@ -146,8 +146,6 @@
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2751
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-"3156
-[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3199
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3308
@@ -168,8 +166,6 @@
 [v _PEIE PEIE `VEb  1 e 0 @94 ]
 "3622
 [v _PEN PEN `VEb  1 e 0 @1162 ]
-"3682
-[v _RC0 RC0 `VEb  1 e 0 @56 ]
 "3704
 [v _RCEN RCEN `VEb  1 e 0 @1163 ]
 "3708
@@ -184,8 +180,8 @@
 [v _SPEN SPEN `VEb  1 e 0 @199 ]
 "3780
 [v _SYNC SYNC `VEb  1 e 0 @1220 ]
-"3844
-[v _TRISA3 TRISA3 `VEb  1 e 0 @1067 ]
+"3870
+[v _TRISC0 TRISC0 `VEb  1 e 0 @1080 ]
 "3882
 [v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
 "3884
@@ -199,10 +195,9 @@
 [v _YAVG YAVG `us  1 e 2 0 ]
 [v _ZAVG ZAVG `us  1 e 2 0 ]
 [v _AVG AVG `us  1 e 2 0 ]
-"13 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.h
+"16 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _ECU_ID ECU_ID `uc  1 e 1 0 ]
-[s S19 . 12 `uc 1 ID 1 0 :7:0 
-`uc 1 SwitchStatus 1 0 :1:7 
+[s S19 . 12 `uc 1 ID 1 0 :8:0 
 `uc 1 HT 1 1 :8:0 
 `uc 1 LT 1 2 :8:0 
 `uc 1 HX 1 3 :8:0 
@@ -215,33 +210,33 @@
 `uc 1 AVG_VibrationL 1 10 :8:0 
 `uc 1 CRC 1 11 :8:0 
 ]
-"47
-[u S33 . 12 `[12]uc 1 DATA_BUFFER 12 0 `S19 1 . 12 0 ]
-[v _Data_Buffer Data_Buffer `S33  1 e 12 0 ]
-"31 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+"39 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.h
+[u S32 . 12 `[12]uc 1 DATA_BUFFER 12 0 `S19 1 . 12 0 ]
+[v _Data_Buffer Data_Buffer `S32  1 e 12 0 ]
+"29 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"35
+"33
 [v main@Z Z `s  1 a 2 16 ]
 [v main@Y Y `s  1 a 2 14 ]
 [v main@X X `s  1 a 2 12 ]
-"33
+"31
 [v main@bw_rate bw_rate `i  1 a 2 4 ]
 [v main@pow pow `i  1 a 2 2 ]
 [v main@id id `i  1 a 2 0 ]
-"34
+"32
 [v main@ZL ZL `uc  1 a 1 11 ]
 [v main@ZH ZH `uc  1 a 1 10 ]
 [v main@YL YL `uc  1 a 1 9 ]
 [v main@YH YH `uc  1 a 1 8 ]
 [v main@XH XH `uc  1 a 1 7 ]
 [v main@XL XL `uc  1 a 1 6 ]
-"87
+"85
 } 0
 "17
 [v _system_init system_init `(v  1 e 1 0 ]
 {
-"28
+"26
 } 0
 "6 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\ADXL_m.c
 [v _ini_adxl345 ini_adxl345 `(v  1 e 1 0 ]
@@ -327,7 +322,7 @@
 {
 "33
 } 0
-"76
+"75
 [v _UART_u8GetNodeID UART_u8GetNodeID `(uc  1 e 1 0 ]
 {
 "79
@@ -395,25 +390,25 @@
 "35 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\UART_m.c
 [v _UART_vidNewDataReceived UART_vidNewDataReceived `II(v  1 e 1 0 ]
 {
-"51
+"50
 } 0
-"53
-[v _RS845_ManageState RS845_ManageState `(v  1 e 1 0 ]
+"52
+[v _RS845_ManageState RS845_ManageState `(v  1 s 1 RS845_ManageState ]
 {
+"62
+} 0
 "63
-} 0
-"64
-[v _UART_vidSend UART_vidSend `(v  1 e 1 0 ]
+[v _UART_vidSend UART_vidSend `(v  1 s 1 UART_vidSend ]
 {
-[v UART_vidSend@data data `DCC*.4uc  1 a 1 wreg ]
-"66
+[v UART_vidSend@data data `DCC*.4DCCuc  1 a 1 wreg ]
+"65
 [v UART_vidSend@UART_u16Index UART_u16Index `us  1 a 2 4 ]
-"64
-[v UART_vidSend@data data `DCC*.4uc  1 a 1 wreg ]
-[v UART_vidSend@Len Len `DCCus  1 p 2 0 ]
-"66
-[v UART_vidSend@data data `DCC*.4uc  1 a 1 3 ]
-"74
+"63
+[v UART_vidSend@data data `DCC*.4DCCuc  1 a 1 wreg ]
+[v UART_vidSend@Len Len `DCCuc  1 p 1 0 ]
+"65
+[v UART_vidSend@data data `DCC*.4DCCuc  1 a 1 3 ]
+"73
 } 0
 "10 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\CRC8.c
 [v _Get_CRC8 Get_CRC8 `(uc  1 e 1 0 ]
@@ -431,15 +426,15 @@
 [v Get_CRC8@Data Data `*.4uc  1 a 1 3 ]
 "33
 } 0
-"88 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
+"86 D:\FreeLance\VIBRATION_NETWORK_DETECTOR\RS485.X\main.c
 [v _FinishBuffer FinishBuffer `(v  1 e 1 0 ]
 {
-"96
+"94
 } 0
-"98
+"96
 [v _Get_Tempreture Get_Tempreture `(us  1 e 2 0 ]
 {
-"100
+"98
 [v Get_Tempreture@Result Result `us  1 a 2 9 ]
-"106
+"104
 } 0

@@ -10,19 +10,17 @@
 #include "average_calculations.h"
 
 void FinishBuffer(void);
-void (*ptrFinishBuffer)(void) = &FinishBuffer;
+void (*ptrFinishBuffer)(void) = FinishBuffer;
 unsigned short Get_Tempreture(void);
 
 unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
+    TRISC0 = 0;
     OPTION_REGbits.nRBPU = 0;
-    TRISB = 0xFF;
-    WPUB = 0xFF;
-    ADCON0 = 0x00;
-    ANSEL = 0x00;
+    TRISB = 0x7F;
+    WPUB = 0x7F;
     ANS3 = 1;
-    TRISA3 = 1;
     ADCON0 = 0x0D;
     ANSELH = 0x00;
 }
@@ -82,7 +80,7 @@ void main(void)
         
         AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
         
-        AVG = get_average(AVG);      
+        AVG = get_average(AVG);   
     }
 }
 void FinishBuffer(void)
@@ -99,8 +97,8 @@ unsigned short Get_Tempreture(void)
 {
     unsigned short Result = 0x0000;
     
-    ADCON0 = 0x02;
-    __delay_ms(6);
+    ADCON0 |= 0x02;
+    __delay_ms(10);
     Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
     return Result;
 }

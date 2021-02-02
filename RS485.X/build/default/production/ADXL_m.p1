@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"18 UART_m.h
-[s S135 :7 `uc 1 :1 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
-[n S135 . ID SwitchStatus HT LT HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
-"15
+"17 UART_m.h
+[s S135 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 :8 `uc 1 ]
+[n S135 . ID HT LT HX LX HY LY HZ LZ AVG_VibrationH AVG_VibrationL CRC ]
+"14
 [u S134 `uc -> -> -> 12 `i `uc `ux `S135 1 ]
 [n S134 . DATA_BUFFER . ]
 "26 ADXL_m.h
@@ -1515,42 +1515,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ADXL_m.h: 26: char E_Write(int addr, unsigned char ch);
 [; ;ADXL_m.h: 27: unsigned char E_Read(int addr);
 [; ;system.h: 35: void Delay_ms(unsigned char Delay);
-"13 UART_m.h
-[v _ECU_ID `uc ~T0 @X0 1 e ]
-[; ;UART_m.h: 13: unsigned char ECU_ID;
-[; ;UART_m.h: 14: typedef union
-[; ;UART_m.h: 15: {
-[; ;UART_m.h: 16: unsigned char DATA_BUFFER[((unsigned char)12)];
-[; ;UART_m.h: 17: struct
-[; ;UART_m.h: 18: {
-[; ;UART_m.h: 19: unsigned char ID : 7;
-[; ;UART_m.h: 20: unsigned char SwitchStatus : 1;
-[; ;UART_m.h: 21: unsigned char HT : 8;
-[; ;UART_m.h: 22: unsigned char LT : 8;
-[; ;UART_m.h: 24: unsigned char HX : 8;
-[; ;UART_m.h: 25: unsigned char LX : 8;
-[; ;UART_m.h: 27: unsigned char HY : 8;
-[; ;UART_m.h: 28: unsigned char LY : 8;
-[; ;UART_m.h: 30: unsigned char HZ : 8;
-[; ;UART_m.h: 31: unsigned char LZ : 8;
-[; ;UART_m.h: 33: unsigned char AVG_VibrationH : 8;
-[; ;UART_m.h: 34: unsigned char AVG_VibrationL : 8;
-[; ;UART_m.h: 36: unsigned char CRC : 8;
-[; ;UART_m.h: 37: };
-[; ;UART_m.h: 38: }_DATA_BUFFER;
-[; ;UART_m.h: 40: typedef enum
-[; ;UART_m.h: 41: {
-[; ;UART_m.h: 42: RS485_Init = 0,
-[; ;UART_m.h: 43: RS485_ID_CHECK,
-[; ;UART_m.h: 44: RS485_BUFFER_SEND
-[; ;UART_m.h: 45: }RS485_Stack_States;
-"47
+[; ;UART_m.h: 13: typedef union
+[; ;UART_m.h: 14: {
+[; ;UART_m.h: 15: unsigned char DATA_BUFFER[((unsigned char)12)];
+[; ;UART_m.h: 16: struct
+[; ;UART_m.h: 17: {
+[; ;UART_m.h: 18: unsigned char ID : 8;
+[; ;UART_m.h: 20: unsigned char HT : 8;
+[; ;UART_m.h: 21: unsigned char LT : 8;
+[; ;UART_m.h: 23: unsigned char HX : 8;
+[; ;UART_m.h: 24: unsigned char LX : 8;
+[; ;UART_m.h: 26: unsigned char HY : 8;
+[; ;UART_m.h: 27: unsigned char LY : 8;
+[; ;UART_m.h: 29: unsigned char HZ : 8;
+[; ;UART_m.h: 30: unsigned char LZ : 8;
+[; ;UART_m.h: 32: unsigned char AVG_VibrationH : 8;
+[; ;UART_m.h: 33: unsigned char AVG_VibrationL : 8;
+[; ;UART_m.h: 35: unsigned char CRC : 8;
+[; ;UART_m.h: 36: };
+[; ;UART_m.h: 37: }_DATA_BUFFER;
+"39 UART_m.h
 [v _Data_Buffer `S134 ~T0 @X0 1 e ]
-[; ;UART_m.h: 47: _DATA_BUFFER Data_Buffer;
-[; ;UART_m.h: 68: void UART_vidInit(void);
-[; ;UART_m.h: 70: void RS845_ManageState(void);
-[; ;UART_m.h: 72: void UART_vidSend(unsigned char* const data,const unsigned short Len);
-[; ;UART_m.h: 74: void UART_vidReceive(unsigned char* data);
+[; ;UART_m.h: 39: _DATA_BUFFER Data_Buffer;
+[; ;UART_m.h: 58: void UART_vidInit(void);
 "6 ADXL_m.c
 [v _ini_adxl345 `(v ~T0 @X0 1 ef ]
 "7

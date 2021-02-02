@@ -2048,14 +2048,13 @@ unsigned char E_Read(int addr);
 void Delay_ms(unsigned char Delay);
 
 # 13 "UART_m.h"
-unsigned char ECU_ID;
 typedef union
 {
 unsigned char DATA_BUFFER[((unsigned char)12)];
 struct
 {
-unsigned char ID : 7;
-unsigned char SwitchStatus : 1;
+unsigned char ID : 8;
+
 unsigned char HT : 8;
 unsigned char LT : 8;
 
@@ -2075,23 +2074,10 @@ unsigned char CRC : 8;
 };
 }_DATA_BUFFER;
 
-typedef enum
-{
-RS485_Init = 0,
-RS485_ID_CHECK,
-RS485_BUFFER_SEND
-}RS485_Stack_States;
-
 _DATA_BUFFER Data_Buffer;
 
-# 68
+# 58
 void UART_vidInit(void);
-
-void RS845_ManageState(void);
-
-void UART_vidSend(unsigned char* const data,const unsigned short Len);
-
-void UART_vidReceive(unsigned char* data);
 
 # 6 "ADXL_m.c"
 void ini_adxl345()

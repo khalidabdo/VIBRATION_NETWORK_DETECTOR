@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.41\dat\en_msgs.txt -cs \
   -h+dist/default/production\RS485.X.production.sym \
   --cmf=dist/default/production\RS485.X.production.cmf -z -Q16F882 \
-  -oC:\Users\khalid\AppData\Local\Temp\s628.2 \
+  -oC:\Users\khalid\AppData\Local\Temp\s80s.2 \
   -Mdist/default/production/RS485.X.production.map -E1 -ver=XC8 \
   -ASTACK=05Dh-06fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
@@ -16,7 +16,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\khalid\AppData\Local\Temp\s628.obj \
+  -DENTRY=2 -k C:\Users\khalid\AppData\Local\Temp\s80s.obj \
   dist/default/production\RS485.X.production.obj 
 
 Object code version is 3.11
@@ -26,7 +26,7 @@ Machine type is 16F882
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\khalid\AppData\Local\Temp\s628.obj
+C:\Users\khalid\AppData\Local\Temp\s80s.obj
                 end_init                             10       10        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             2007     2007        2     400E       0
@@ -36,22 +36,22 @@ dist/default/production\RS485.X.production.obj
                 intentry                              4        4        C        8       0
                 text28                              570      570       35        2       0
                 text27                              457      457       4F        2       0
-                text26                              5A5      5A5       31        2       0
-                text25                              5D6      5D6       2B        2       0
-                text24                              6B4      6B4        D        2       0
-                text23                              601      601       26        2       0
-                text22                              6E4      6E4        7        2       0
-                text21                              6CC      6CC        9        2       0
-                text20                              697      697       10        2       0
-                text19                              6F7      6F7        6        2       0
-                text18                              6C1      6C1        B        2       0
-                text17                              6F1      6F1        6        2       0
-                text16                              6EB      6EB        6        2       0
-                text15                              65B      65B       16        2       0
-                text14                              6DD      6DD        7        2       0
-                text13                              684      684       13        2       0
-                text12                              671      671       13        2       0
-                text11                              627      627       1B        2       0
+                text26                              5D6      5D6       31        2       0
+                text25                              5A5      5A5       31        2       0
+                text24                              69F      69F        D        2       0
+                text23                              607      607       24        2       0
+                text22                              6DA      6DA        7        2       0
+                text21                              6C2      6C2        9        2       0
+                text20                              682      682       10        2       0
+                text19                              6ED      6ED        6        2       0
+                text18                              6B7      6B7        B        2       0
+                text17                              6E7      6E7        6        2       0
+                text16                              6E1      6E1        6        2       0
+                text15                              646      646       16        2       0
+                text14                              6D3      6D3        7        2       0
+                text13                              66F      66F       13        2       0
+                text12                              6AC      6AC        B        2       0
+                text11                              62B      62B       1B        2       0
                 text10                              532      532       3E        2       0
                 text9                               270      270       8F        2       0
                 text8                               4F1      4F1       41        2       0
@@ -59,20 +59,20 @@ dist/default/production\RS485.X.production.obj
                 text6                               3AB      3AB       56        2       0
                 text5                               355      355       56        2       0
                 text4                               2FF      2FF       56        2       0
-                text3                               6A7      6A7        D        2       0
+                text3                               692      692        D        2       0
                 text2                               4A6      4A6       4B        2       0
-                text1                               642      642       19        2       0
+                text1                               65C      65C       13        2       0
                 maintext                            108      108      168        2       0
                 cstackBANK0                          20       20       2C       20       1
                 cstackCOMMON                         70       70        C       70       1
                 cstackBANK1                          A0       A0       12       A0       1
-                clrtext                             6D5      6D5        8        2       0
+                clrtext                             6CB      6CB        8        2       0
                 bssBANK1                             B2       B2        C       A0       1
                 bssBANK0                             4C       4C       10       20       1
                 dataCOMMON                           7D       7D        1       70       1
                 bssCOMMON                            7C       7C        1       70       1
                 nvBANK0                              5C       5C        1       20       1
-                idataCOMMON                         6FD      6FD        1        2       0
+                idataCOMMON                         6F3      6F3        1        2       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -85,22 +85,22 @@ TOTAL           Name                               Link     Load   Length     Sp
                 reset_vec                             0        0        1         0
                 text28                              570      570       35         0
                 text27                              457      457       4F         0
-                text26                              5A5      5A5       31         0
-                text25                              5D6      5D6       2B         0
-                text24                              6B4      6B4        D         0
-                text23                              601      601       26         0
-                text22                              6E4      6E4        7         0
-                text21                              6CC      6CC        9         0
-                text20                              697      697       10         0
-                text19                              6F7      6F7        6         0
-                text18                              6C1      6C1        B         0
-                text17                              6F1      6F1        6         0
-                text16                              6EB      6EB        6         0
-                text15                              65B      65B       16         0
-                text14                              6DD      6DD        7         0
-                text13                              684      684       13         0
-                text12                              671      671       13         0
-                text11                              627      627       1B         0
+                text26                              5D6      5D6       31         0
+                text25                              5A5      5A5       31         0
+                text24                              69F      69F        D         0
+                text23                              607      607       24         0
+                text22                              6DA      6DA        7         0
+                text21                              6C2      6C2        9         0
+                text20                              682      682       10         0
+                text19                              6ED      6ED        6         0
+                text18                              6B7      6B7        B         0
+                text17                              6E7      6E7        6         0
+                text16                              6E1      6E1        6         0
+                text15                              646      646       16         0
+                text14                              6D3      6D3        7         0
+                text13                              66F      66F       13         0
+                text12                              6AC      6AC        B         0
+                text11                              62B      62B       1B         0
                 text10                              532      532       3E         0
                 text9                               270      270       8F         0
                 text8                               4F1      4F1       41         0
@@ -108,12 +108,12 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text6                               3AB      3AB       56         0
                 text5                               355      355       56         0
                 text4                               2FF      2FF       56         0
-                text3                               6A7      6A7        D         0
+                text3                               692      692        D         0
                 text2                               4A6      4A6       4B         0
-                text1                               642      642       19         0
+                text1                               65C      65C       13         0
                 maintext                            108      108      168         0
-                clrtext                             6D5      6D5        8         0
-                idataCOMMON                         6FD      6FD        1         0
+                clrtext                             6CB      6CB        8         0
+                idataCOMMON                         6F3      6F3        1         0
 
         CLASS   STRCODE        
 
@@ -170,7 +170,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackBANK0                    000020  00003D  00005D        20       1  BANK0       1
                 cstackCOMMON                   000070  00000E  00007E        70       1  COMMON      1
                 cstackBANK1                    0000A0  00001E  0000BE        A0       1  BANK1       1
-                functab                        000100  0005FE  0006FE         2       0  CODE        2
+                functab                        000100  0005F4  0006F4         2       0  CODE        2
                 config                         002007  000002  002009      400E       0  CONFIG      2
 
 
@@ -181,14 +181,14 @@ UNUSED ADDRESS RANGES
         BANK1            00BE-00BF              2           1
         CODE             0001-0003              3           2
                          001F-00FF             E1
-                         06FE-07FF            102
+                         06F4-07FF            10C
         CONST            0001-0003              3           2
                          001F-00FF             E1
-                         06FE-07FF              2
+                         06F4-07FF              C
         EEDATA           2100-217F             80           2
         ENTRY            0001-0003              3           2
                          001F-00FF             E1
-                         06FE-07FF              2
+                         06F4-07FF              C
         IDLOC            2000-2003              4           2
         RAM              005D-006F             13           1
                          00BE-00BF              2
@@ -199,10 +199,10 @@ UNUSED ADDRESS RANGES
         STACK            005D-006F             13           1
         STRCODE          0001-0003              3           2
                          001F-00FF             E1
-                         06FE-07FF            102
+                         06F4-07FF            10C
         STRING           0001-0003              3           2
                          001F-00FF             E1
-                         06FE-07FF              2
+                         06F4-07FF              C
 
                                   Symbol Table
 
@@ -235,7 +235,6 @@ _ADCON0                           (abs)        001F
 _ADRESH                           (abs)        001E
 _ADRESL                           (abs)        009E
 _ANS3                             (abs)        0C43
-_ANSEL                            (abs)        0188
 _ANSELH                           (abs)        0189
 _AVG                              bssBANK0     0054
 _BF                               (abs)        04A0
@@ -243,33 +242,32 @@ _BRGH                             (abs)        04C2
 _CREN                             (abs)        00C4
 _Data_Buffer                      bssBANK1     00B2
 _ECU_ID                           nvBANK0      005C
-_E_Read                           text15       065B
-_E_Write                          text3        06A7
+_E_Read                           text15       0646
+_E_Write                          text3        0692
 _FinishBuffer                     text27       0457
 _GIE                              (abs)        005F
-_Get_CRC8                         text26       05A5
+_Get_CRC8                         text26       05D6
 _Get_Tempreture                   text28       0570
-_I2CAck                           text14       06DD
-_I2CInit                          text13       0684
-_I2CNak                           text22       06E4
-_I2CRead                          text20       0697
-_I2CRestart                       text19       06F7
-_I2CSend                          text18       06C1
-_I2CStart                         text17       06F1
-_I2CStop                          text16       06EB
-_I2CWait                          text21       06CC
+_I2CAck                           text14       06D3
+_I2CInit                          text13       066F
+_I2CNak                           text22       06DA
+_I2CRead                          text20       0682
+_I2CRestart                       text19       06ED
+_I2CSend                          text18       06B7
+_I2CStart                         text17       06E7
+_I2CStop                          text16       06E1
+_I2CWait                          text21       06C2
 _OPTION_REGbits                   (abs)        0081
 _PEIE                             (abs)        005E
 _PEN                              (abs)        048A
 _PIR1bits                         (abs)        000C
 _PIR2bits                         (abs)        000D
 _PORTB                            (abs)        0006
-_RC0                              (abs)        0038
 _RCEN                             (abs)        048B
 _RCIE                             (abs)        0465
 _RCIF                             (abs)        0065
 _RCREG                            (abs)        001A
-_RS845_ManageState                text24       06B4
+_RS845_ManageState                text24       069F
 _RSEN                             (abs)        0489
 _SEN                              (abs)        0488
 _SPBRG                            (abs)        0099
@@ -280,17 +278,17 @@ _SSPCON                           (abs)        0014
 _SSPCON2                          (abs)        0091
 _SSPSTAT                          (abs)        0094
 _SYNC                             (abs)        04C4
-_TRISA3                           (abs)        042B
 _TRISB                            (abs)        0086
+_TRISC0                           (abs)        0438
 _TRISC6                           (abs)        043E
 _TRISC7                           (abs)        043F
 _TRISCbits                        (abs)        0087
 _TXEN                             (abs)        04C5
 _TXREG                            (abs)        0019
-_UART_u8GetNodeID                 text12       0671
-_UART_vidInit                     text11       0627
-_UART_vidNewDataReceived          text23       0601
-_UART_vidSend                     text25       05D6
+_UART_u8GetNodeID                 text12       06AC
+_UART_vidInit                     text11       062B
+_UART_vidNewDataReceived          text23       0607
+_UART_vidSend                     text25       05A5
 _WPUB                             (abs)        0095
 _XAVG                             bssBANK0     005A
 _YAVG                             bssBANK0     0058
@@ -409,25 +407,25 @@ ___lwdiv@dividend                 cstackBANK0  0028
 ___lwdiv@divisor                  cstackBANK0  0026
 ___lwdiv@quotient                 cstackBANK0  002C
 ___sp                             stack        0000
-__end_of_E_Read                   text15       0671
-__end_of_E_Write                  text3        06B4
+__end_of_E_Read                   text15       065C
+__end_of_E_Write                  text3        069F
 __end_of_FinishBuffer             text27       04A6
-__end_of_Get_CRC8                 text26       05D6
+__end_of_Get_CRC8                 text26       0607
 __end_of_Get_Tempreture           text28       05A5
-__end_of_I2CAck                   text14       06E4
-__end_of_I2CInit                  text13       0697
-__end_of_I2CNak                   text22       06EB
-__end_of_I2CRead                  text20       06A7
-__end_of_I2CRestart               text19       06FD
-__end_of_I2CSend                  text18       06CC
-__end_of_I2CStart                 text17       06F7
-__end_of_I2CStop                  text16       06F1
-__end_of_I2CWait                  text21       06D5
-__end_of_RS845_ManageState        text24       06C1
-__end_of_UART_u8GetNodeID         text12       0684
-__end_of_UART_vidInit             text11       0642
-__end_of_UART_vidNewDataReceived  text23       0627
-__end_of_UART_vidSend             text25       0601
+__end_of_I2CAck                   text14       06DA
+__end_of_I2CInit                  text13       0682
+__end_of_I2CNak                   text22       06E1
+__end_of_I2CRead                  text20       0692
+__end_of_I2CRestart               text19       06F3
+__end_of_I2CSend                  text18       06C2
+__end_of_I2CStart                 text17       06ED
+__end_of_I2CStop                  text16       06E7
+__end_of_I2CWait                  text21       06CB
+__end_of_RS845_ManageState        text24       06AC
+__end_of_UART_u8GetNodeID         text12       06B7
+__end_of_UART_vidInit             text11       0646
+__end_of_UART_vidNewDataReceived  text23       062B
+__end_of_UART_vidSend             text25       05D6
 __end_of___aldiv                  text9        02FF
 __end_of___lmul                   text8        0532
 __end_of___lwdiv                  text10       0570
@@ -439,7 +437,7 @@ __end_of_get_averageY             text5        03AB
 __end_of_get_averageZ             text4        0355
 __end_of_ini_adxl345              text2        04F1
 __end_of_main                     maintext     0270
-__end_of_system_init              text1        065B
+__end_of_system_init              text1        066F
 __i1fptable                       functab      0101
 __initialization                  cinit        0011
 __pbssBANK0                       bssBANK0     004C
@@ -450,32 +448,32 @@ __pcstackBANK1                    cstackBANK1  00A0
 __pcstackCOMMON                   cstackCOMMON 0070
 __pdataCOMMON                     dataCOMMON   007D
 __pfunctab                        functab      0100
-__pidataCOMMON                    idataCOMMON  06FD
+__pidataCOMMON                    idataCOMMON  06F3
 __pintentry                       intentry     0004
 __pmaintext                       maintext     0108
 __pnvBANK0                        nvBANK0      005C
-__ptext1                          text1        0642
+__ptext1                          text1        065C
 __ptext10                         text10       0532
-__ptext11                         text11       0627
-__ptext12                         text12       0671
-__ptext13                         text13       0684
-__ptext14                         text14       06DD
-__ptext15                         text15       065B
-__ptext16                         text16       06EB
-__ptext17                         text17       06F1
-__ptext18                         text18       06C1
-__ptext19                         text19       06F7
+__ptext11                         text11       062B
+__ptext12                         text12       06AC
+__ptext13                         text13       066F
+__ptext14                         text14       06D3
+__ptext15                         text15       0646
+__ptext16                         text16       06E1
+__ptext17                         text17       06E7
+__ptext18                         text18       06B7
+__ptext19                         text19       06ED
 __ptext2                          text2        04A6
-__ptext20                         text20       0697
-__ptext21                         text21       06CC
-__ptext22                         text22       06E4
-__ptext23                         text23       0601
-__ptext24                         text24       06B4
-__ptext25                         text25       05D6
-__ptext26                         text26       05A5
+__ptext20                         text20       0682
+__ptext21                         text21       06C2
+__ptext22                         text22       06DA
+__ptext23                         text23       0607
+__ptext24                         text24       069F
+__ptext25                         text25       05A5
+__ptext26                         text26       05D6
 __ptext27                         text27       0457
 __ptext28                         text28       0570
-__ptext3                          text3        06A7
+__ptext3                          text3        0692
 __ptext4                          text4        02FF
 __ptext5                          text5        0355
 __ptext6                          text6        03AB
@@ -519,9 +517,9 @@ _get_averageZ                     text4        02FF
 _ini_adxl345                      text2        04A6
 _main                             maintext     0108
 _ptrFinishBuffer                  dataCOMMON   007D
-_system_init                      text1        0642
+_system_init                      text1        065C
 btemp                             (abs)        007E
-clear_ram0                        clrtext      06D5
+clear_ram0                        clrtext      06CB
 end_of_initialization             cinit        001D
 fpbase                            (abs)        0000
 fptable                           functab      0100
@@ -569,7 +567,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 31 in file "main.c"
+		line 29 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -952,7 +950,7 @@ Total ram usage:        8 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		wreg, status,2, pclath, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -974,7 +972,7 @@ Total ram usage:        1 bytes
 
  *************** function _UART_u8GetNodeID *****************
  Defined at:
-		line 76 in file "UART_m.c"
+		line 75 in file "UART_m.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -982,7 +980,7 @@ Total ram usage:        1 bytes
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
-		wreg, status,2, status,0
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -1351,7 +1349,7 @@ Total ram usage:        6 bytes
 
  *************** function _RS845_ManageState *****************
  Defined at:
-		line 53 in file "UART_m.c"
+		line 52 in file "UART_m.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1367,9 +1365,9 @@ Total ram usage:        6 bytes
  Data sizes:     COMMON   BANK0   BANK1
       Params:         0       0       0
       Locals:         0       0       0
-      Temps:          0       0       0
-      Totals:         0       0       0
-Total ram usage:        0 bytes
+      Temps:          1       0       0
+      Totals:         1       0       0
+Total ram usage:        1 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    1
  This function calls:
@@ -1381,13 +1379,13 @@ Total ram usage:        0 bytes
 
  *************** function _UART_vidSend *****************
  Defined at:
-		line 64 in file "UART_m.c"
+		line 63 in file "UART_m.c"
  Parameters:    Size  Location     Type
-  data            1    wreg     const PTR unsigned char 
+  data            1    wreg     const PTR const unsigned
 		 -> Data_Buffer(12), 
-  Len             2    0[COMMON] const unsigned short 
+  Len             1    0[COMMON] const unsigned char 
  Auto vars:     Size  Location     Type
-  data            1    3[COMMON] const PTR unsigned char 
+  data            1    3[COMMON] const PTR const unsigned
 		 -> Data_Buffer(12), 
   UART_u16Inde    2    4[COMMON] unsigned short 
  Return value:  Size  Location     Type
@@ -1399,9 +1397,9 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0   BANK1
-      Params:         2       0       0
+      Params:         1       0       0
       Locals:         3       0       0
-      Temps:          1       0       0
+      Temps:          2       0       0
       Totals:         6       0       0
 Total ram usage:        6 bytes
  Hardware stack levels used:    1
@@ -1449,7 +1447,7 @@ Total ram usage:        7 bytes
 
  *************** function _FinishBuffer *****************
  Defined at:
-		line 88 in file "main.c"
+		line 86 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1479,7 +1477,7 @@ Total ram usage:        1 bytes
 
  *************** function _Get_Tempreture *****************
  Defined at:
-		line 98 in file "main.c"
+		line 96 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1516,7 +1514,7 @@ C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\lwdiv.c estimated size: 63
 
 CRC8.c
-		_Get_CRC8      		CODE           	05A5	0000	50
+		_Get_CRC8      		CODE           	05D6	0000	50
 
 CRC8.c estimated size: 50
 
@@ -1526,18 +1524,18 @@ C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\aldiv.c
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\aldiv.c estimated size: 144
 
 ADXL_m.c
-		_I2CNak        		CODE           	06E4	0000	8
-		_I2CStop       		CODE           	06EB	0000	7
-		_E_Read        		CODE           	065B	0000	23
-		_I2CAck        		CODE           	06DD	0000	8
-		_I2CRead       		CODE           	0697	0000	17
-		_I2CRestart    		CODE           	06F7	0000	7
-		_I2CStart      		CODE           	06F1	0000	7
-		_E_Write       		CODE           	06A7	0000	14
-		_I2CWait       		CODE           	06CC	0000	10
+		_I2CNak        		CODE           	06DA	0000	8
+		_I2CStop       		CODE           	06E1	0000	7
+		_E_Read        		CODE           	0646	0000	23
+		_I2CAck        		CODE           	06D3	0000	8
+		_I2CRead       		CODE           	0682	0000	17
+		_I2CRestart    		CODE           	06ED	0000	7
+		_I2CStart      		CODE           	06E7	0000	7
+		_E_Write       		CODE           	0692	0000	14
+		_I2CWait       		CODE           	06C2	0000	10
 		_ini_adxl345   		CODE           	04A6	0000	76
-		_I2CInit       		CODE           	0684	0000	20
-		_I2CSend       		CODE           	06C1	0000	12
+		_I2CInit       		CODE           	066F	0000	20
+		_I2CSend       		CODE           	06B7	0000	12
 
 ADXL_m.c estimated size: 209
 
@@ -1550,13 +1548,13 @@ average_calculations.c
 average_calculations.c estimated size: 348
 
 UART_m.c
-		_UART_u8GetNodeID		CODE           	0671	0000	20
-		_UART_vidSend  		CODE           	05D6	0000	44
-		_UART_vidInit  		CODE           	0627	0000	28
-		_RS845_ManageState		CODE           	06B4	0000	14
-		_UART_vidNewDataReceived		CODE           	0601	0000	39
+		_UART_u8GetNodeID		CODE           	06AC	0000	12
+		_UART_vidSend  		CODE           	05A5	0000	50
+		_UART_vidInit  		CODE           	062B	0000	28
+		_RS845_ManageState		CODE           	069F	0000	14
+		_UART_vidNewDataReceived		CODE           	0607	0000	37
 
-UART_m.c estimated size: 145
+UART_m.c estimated size: 141
 
 C:\Program Files (x86)\Microchip\xc8\v1.41\sources\common\Umul32.c
 		___lmul        		CODE           	04F1	0000	66
@@ -1570,10 +1568,10 @@ shared
 shared estimated size: 21
 
 main.c
-		_system_init   		CODE           	0642	0000	26
+		_system_init   		CODE           	065C	0000	20
 		_main          		CODE           	0108	0000	361
 		_Get_Tempreture		CODE           	0570	0000	54
 		_FinishBuffer  		CODE           	0457	0000	80
 
-main.c estimated size: 521
+main.c estimated size: 515
 
