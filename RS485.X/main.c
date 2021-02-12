@@ -25,10 +25,8 @@ void system_init(void)
     ANSELH = 0x00;
 }
 
-
 void main(void) 
 {
-    int id, pow, bw_rate;
     char XL,XH,YH,YL,ZH,ZL;
     short X, Y, Z;
     
@@ -37,14 +35,6 @@ void main(void)
     
     //Initialize I2C Port
     I2CInit();
-    //Initialize ADXL345 Accelerometer
-    //ini_adxl345();
-    
-    //id = E_Read(IDDV);  // should be 229 for ADXL1345
-    //__delay_ms(10);
-    //pow = E_Read(0x2D);  //should be 8 to activate
-    //__delay_ms(10);
-    //bw_rate = E_Read(0x2C);  //BW_RATE 0x2C is 13
     
     I2CStart();
     I2CSend(0xA6);
@@ -110,7 +100,7 @@ void main(void)
         
         AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
         
-        AVG = get_average(AVG);   
+        AVG = get_average(AVG);  
     }
 }
 void FinishBuffer(void)

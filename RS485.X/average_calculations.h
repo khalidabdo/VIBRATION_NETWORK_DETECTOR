@@ -12,5 +12,6 @@ short get_averageY(short Data);
 short get_averageZ(short Data);
 short get_average(short Data);
 
+
 #endif	/* XC_HEADER_TEMPLATE_H */
 
