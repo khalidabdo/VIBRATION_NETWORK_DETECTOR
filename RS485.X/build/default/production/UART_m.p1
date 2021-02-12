@@ -29,6 +29,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CREN `Vb ~T0 @X0 0 e@196 ]
 "14 UART_m.c
 [v _UART_u8GetNodeID `(uc ~T0 @X0 0 ef ]
+[v F1592 `*Cuc ~T0 @X0 1 t ]
+"10
+[v _UART_vidSend `(v ~T0 @X0 0 sf2`C*Cuc`Cuc ]
 "3710 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
 [v F1586 `(v ~T0 @X0 0 tf ]
@@ -40,10 +43,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RS845_ManageState `(v ~T0 @X0 0 sf ]
 "1031 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-[v F1592 `*Cuc ~T0 @X0 1 t ]
-"10 UART_m.c
-[v _UART_vidSend `(v ~T0 @X0 0 sf2`C*Cuc`Cuc ]
-"450 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic16f882.h
+"450
 [s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S17 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
 "449
@@ -1576,165 +1576,168 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;UART_m.c: 32: ECU_ID = UART_u8GetNodeID();
 "32
 [e = _ECU_ID ( _UART_u8GetNodeID ..  ]
-[; ;UART_m.c: 33: }
+[; ;UART_m.c: 33: UART_vidSend(&ECU_ID,1);
 "33
+[e ( _UART_vidSend (2 , -> &U _ECU_ID `C*Cuc -> -> 1 `i `uc ]
+[; ;UART_m.c: 34: }
+"34
 [e :UE 136 ]
 }
 [v F1603 `(v ~T0 @X0 1 tf ]
-"35
-[v _UART_vidNewDataReceived `IF1603 ~T0 @X0 1 e ]
 "36
+[v _UART_vidNewDataReceived `IF1603 ~T0 @X0 1 e ]
+"37
 {
-[; ;UART_m.c: 35: void interrupt UART_vidNewDataReceived()
-[; ;UART_m.c: 36: {
+[; ;UART_m.c: 36: void interrupt UART_vidNewDataReceived()
+[; ;UART_m.c: 37: {
 [e :U _UART_vidNewDataReceived ]
 [f ]
-[; ;UART_m.c: 37: if(RCIF == 1)
-"37
-[e $ ! == -> _RCIF `i -> 1 `i 138  ]
-[; ;UART_m.c: 38: {
+[; ;UART_m.c: 38: if(RCIF == 1)
 "38
-{
-[; ;UART_m.c: 39: GIE = 0;
+[e $ ! == -> _RCIF `i -> 1 `i 138  ]
+[; ;UART_m.c: 39: {
 "39
-[e = _GIE -> -> 0 `i `b ]
-[; ;UART_m.c: 40: ptrFinishBuffer();
-"40
-[e ( *U _ptrFinishBuffer ..  ]
-[; ;UART_m.c: 41: Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12) - 1);
-"41
-[e = . . _Data_Buffer 1 11 ( _Get_CRC8 (2 , &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux -> - -> -> -> 12 `i `uc `i -> 1 `i `uc ]
-[; ;UART_m.c: 42: RS845_ManageState();
-"42
-[e ( _RS845_ManageState ..  ]
-[; ;UART_m.c: 43: GIE = 1;
-"43
-[e = _GIE -> -> 1 `i `b ]
-[; ;UART_m.c: 44: RCIF = 0;
-"44
-[e = _RCIF -> -> 0 `i `b ]
-"45
-}
-[; ;UART_m.c: 45: }
-[e $U 139  ]
-"46
-[e :U 138 ]
-[; ;UART_m.c: 46: else
-[; ;UART_m.c: 47: {
-"47
 {
-"49
+[; ;UART_m.c: 40: GIE = 0;
+"40
+[e = _GIE -> -> 0 `i `b ]
+[; ;UART_m.c: 41: ptrFinishBuffer();
+"41
+[e ( *U _ptrFinishBuffer ..  ]
+[; ;UART_m.c: 42: Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12) - 1);
+"42
+[e = . . _Data_Buffer 1 11 ( _Get_CRC8 (2 , &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux -> - -> -> -> 12 `i `uc `i -> 1 `i `uc ]
+[; ;UART_m.c: 43: RS845_ManageState();
+"43
+[e ( _RS845_ManageState ..  ]
+[; ;UART_m.c: 44: GIE = 1;
+"44
+[e = _GIE -> -> 1 `i `b ]
+[; ;UART_m.c: 45: RCIF = 0;
+"45
+[e = _RCIF -> -> 0 `i `b ]
+"46
+}
+[; ;UART_m.c: 46: }
+[e $U 139  ]
+"47
+[e :U 138 ]
+[; ;UART_m.c: 47: else
+[; ;UART_m.c: 48: {
+"48
+{
+"50
 }
 [e :U 139 ]
-[; ;UART_m.c: 49: }
 [; ;UART_m.c: 50: }
-"50
+[; ;UART_m.c: 51: }
+"51
 [e :UE 137 ]
 }
-"52
-[v _RS845_ManageState `(v ~T0 @X0 1 sf ]
 "53
+[v _RS845_ManageState `(v ~T0 @X0 1 sf ]
+"54
 {
-[; ;UART_m.c: 52: static void RS845_ManageState(void)
-[; ;UART_m.c: 53: {
+[; ;UART_m.c: 53: static void RS845_ManageState(void)
+[; ;UART_m.c: 54: {
 [e :U _RS845_ManageState ]
 [f ]
-[; ;UART_m.c: 54: if(RCREG == (unsigned char)ECU_ID)
-"54
-[e $ ! == -> _RCREG `i -> _ECU_ID `i 141  ]
-[; ;UART_m.c: 55: {
+[; ;UART_m.c: 55: if(RCREG == (unsigned char)ECU_ID)
 "55
-{
-[; ;UART_m.c: 56: UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12));
+[e $ ! == -> _RCREG `i -> _ECU_ID `i 141  ]
+[; ;UART_m.c: 56: {
 "56
-[e ( _UART_vidSend (2 , -> &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux `C*Cuc -> -> 12 `i `uc ]
-"57
-}
-[; ;UART_m.c: 57: }
-[e $U 142  ]
-"58
-[e :U 141 ]
-[; ;UART_m.c: 58: else
-[; ;UART_m.c: 59: {
-"59
 {
-"61
+[; ;UART_m.c: 57: UART_vidSend(&Data_Buffer.DATA_BUFFER[0],((unsigned char)12));
+"57
+[e ( _UART_vidSend (2 , -> &U *U + &U . _Data_Buffer 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _Data_Buffer 0 `ui `ux `C*Cuc -> -> 12 `i `uc ]
+"58
+}
+[; ;UART_m.c: 58: }
+[e $U 142  ]
+"59
+[e :U 141 ]
+[; ;UART_m.c: 59: else
+[; ;UART_m.c: 60: {
+"60
+{
+"62
 }
 [e :U 142 ]
-[; ;UART_m.c: 61: }
 [; ;UART_m.c: 62: }
-"62
+[; ;UART_m.c: 63: }
+"63
 [e :UE 140 ]
 }
-"63
-[v _UART_vidSend `(v ~T0 @X0 1 sf2`C*Cuc`Cuc ]
 "64
+[v _UART_vidSend `(v ~T0 @X0 1 sf2`C*Cuc`Cuc ]
+"65
 {
-[; ;UART_m.c: 63: static void UART_vidSend(unsigned char const * const data,const unsigned char Len)
-[; ;UART_m.c: 64: {
+[; ;UART_m.c: 64: static void UART_vidSend(unsigned char const * const data,const unsigned char Len)
+[; ;UART_m.c: 65: {
 [e :U _UART_vidSend ]
 [v F1609 `*Cuc ~T0 @X0 1 t ]
-"63
+"64
 [v _data `C*Cuc ~T0 @X0 1 r1 ]
 [v _Len `Cuc ~T0 @X0 1 r2 ]
-"64
-[f ]
 "65
+[f ]
+"66
 [v _UART_u16Index `us ~T0 @X0 1 a ]
-[; ;UART_m.c: 65: unsigned short UART_u16Index = 0;
+[; ;UART_m.c: 66: unsigned short UART_u16Index = 0;
 [e = _UART_u16Index -> -> 0 `i `us ]
-[; ;UART_m.c: 67: for(UART_u16Index = 0; UART_u16Index < Len; UART_u16Index++)
-"67
+[; ;UART_m.c: 68: for(UART_u16Index = 0; UART_u16Index < Len; UART_u16Index++)
+"68
 {
 [e = _UART_u16Index -> -> 0 `i `us ]
 [e $ < -> _UART_u16Index `ui -> _Len `ui 144  ]
 [e $U 145  ]
-"68
-[e :U 144 ]
-[; ;UART_m.c: 68: {
-{
-[; ;UART_m.c: 69: while(PIR1bits.TXIF == 0);
 "69
+[e :U 144 ]
+[; ;UART_m.c: 69: {
+{
+[; ;UART_m.c: 70: while(PIR1bits.TXIF == 0);
+"70
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 148  ]
 [e :U 149 ]
-[; ;UART_m.c: 70: TXREG = data[UART_u16Index];
-"70
-[e = _TXREG *U + _data * -> _UART_u16Index `ux -> -> # *U _data `ui `ux ]
+[; ;UART_m.c: 71: TXREG = data[UART_u16Index];
 "71
+[e = _TXREG *U + _data * -> _UART_u16Index `ux -> -> # *U _data `ui `ux ]
+"72
 }
-"67
+"68
 [e ++ _UART_u16Index -> -> 1 `i `us ]
 [e $ < -> _UART_u16Index `ui -> _Len `ui 144  ]
 [e :U 145 ]
-"71
-}
-[; ;UART_m.c: 71: }
-[; ;UART_m.c: 72: PIR1bits.TXIF = 0;
 "72
-[e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
-[; ;UART_m.c: 73: }
+}
+[; ;UART_m.c: 72: }
+[; ;UART_m.c: 73: PIR1bits.TXIF = 0;
 "73
+[e = . . _PIR1bits 0 4 -> -> 0 `i `uc ]
+[; ;UART_m.c: 74: }
+"74
 [e :UE 143 ]
 }
-"75
-[v _UART_u8GetNodeID `(uc ~T0 @X0 1 ef ]
 "76
+[v _UART_u8GetNodeID `(uc ~T0 @X0 1 ef ]
+"77
 {
-[; ;UART_m.c: 75: unsigned char UART_u8GetNodeID(void)
-[; ;UART_m.c: 76: {
+[; ;UART_m.c: 76: unsigned char UART_u8GetNodeID(void)
+[; ;UART_m.c: 77: {
 [e :U _UART_u8GetNodeID ]
 [f ]
-[; ;UART_m.c: 77: Data_Buffer.ID = (PORTB & 0x7F);
-"77
-[e = . . _Data_Buffer 1 0 -> & -> _PORTB `i -> 127 `i `uc ]
-[; ;UART_m.c: 78: return Data_Buffer.ID;
+[; ;UART_m.c: 78: Data_Buffer.ID = (PORTB & 0x7F);
 "78
+[e = . . _Data_Buffer 1 0 -> & -> _PORTB `i -> 127 `i `uc ]
+[; ;UART_m.c: 79: return Data_Buffer.ID;
+"79
 [e ) . . _Data_Buffer 1 0 ]
 [e $UE 150  ]
-[; ;UART_m.c: 79: }
-"79
+[; ;UART_m.c: 80: }
+"80
 [e :UE 150 ]
 }

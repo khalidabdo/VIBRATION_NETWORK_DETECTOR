@@ -30,6 +30,7 @@ void UART_vidInit(void)
     CREN = 1; 
     
     ECU_ID = UART_u8GetNodeID();
+    UART_vidSend(&ECU_ID,1);
 }
 
 void interrupt UART_vidNewDataReceived()

@@ -36,19 +36,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _UART_vidInit `(v ~T0 @X0 0 ef ]
 "14 ADXL_m.h
 [v _I2CInit `(v ~T0 @X0 0 ef ]
-"25
-[v _ini_adxl345 `(v ~T0 @X0 0 ef ]
-"27
-[v _E_Read `(uc ~T0 @X0 0 ef1`i ]
+"15
+[v _I2CStart `(v ~T0 @X0 0 ef ]
+"22
+[v _I2CSend `(v ~T0 @X0 0 ef1`uc ]
+"16
+[v _I2CStop `(v ~T0 @X0 0 ef ]
 [v F1552 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic.h
 [v __delay `JF1552 ~T0 @X0 0 e ]
 [p i __delay ]
-"15 ADXL_m.h
-[v _I2CStart `(v ~T0 @X0 0 ef ]
-"22
-[v _I2CSend `(v ~T0 @X0 0 ef1`uc ]
-"17
+"17 ADXL_m.h
 [v _I2CRestart `(v ~T0 @X0 0 ef ]
 "23
 [v _I2CRead `(uc ~T0 @X0 0 ef ]
@@ -56,8 +54,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _I2CAck `(v ~T0 @X0 0 ef ]
 "19
 [v _I2CNak `(v ~T0 @X0 0 ef ]
-"16
-[v _I2CStop `(v ~T0 @X0 0 ef ]
 "10 average_calculations.h
 [v _get_averageX `(s ~T0 @X0 0 ef1`s ]
 "11
@@ -1637,180 +1633,234 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 39: I2CInit();
 "39
 [e ( _I2CInit ..  ]
-[; ;main.c: 41: ini_adxl345();
-"41
-[e ( _ini_adxl345 ..  ]
-[; ;main.c: 43: id = E_Read(0);
-"43
-[e = _id -> ( _E_Read (1 -> 0 `i `i ]
-[; ;main.c: 44: _delay((unsigned long)((10)*(20000000/4000.0)));
-"44
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 45: pow = E_Read(0x2D);
-"45
-[e = _pow -> ( _E_Read (1 -> 45 `i `i ]
-[; ;main.c: 46: _delay((unsigned long)((10)*(20000000/4000.0)));
-"46
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 47: bw_rate = E_Read(0x2C);
-"47
-[e = _bw_rate -> ( _E_Read (1 -> 44 `i `i ]
-[; ;main.c: 49: while(1)
+[; ;main.c: 49: I2CStart();
 "49
-[e :U 139 ]
-[; ;main.c: 50: {
-"50
-{
-[; ;main.c: 51: X = Y = Z = 0;
-"51
-[e = _X = _Y = _Z -> -> 0 `i `s ]
-[; ;main.c: 53: I2CStart();
-"53
 [e ( _I2CStart ..  ]
-[; ;main.c: 54: I2CSend(0xA6);
-"54
+[; ;main.c: 50: I2CSend(0xA6);
+"50
 [e ( _I2CSend (1 -> -> 166 `i `uc ]
-[; ;main.c: 55: I2CSend(50);
-"55
-[e ( _I2CSend (1 -> -> 50 `i `uc ]
-[; ;main.c: 56: I2CRestart();
-"56
-[e ( _I2CRestart ..  ]
-[; ;main.c: 57: I2CSend(0xA7);
-"57
-[e ( _I2CSend (1 -> -> 167 `i `uc ]
-[; ;main.c: 58: XL = I2CRead();
-"58
-[e = _XL ( _I2CRead ..  ]
-[; ;main.c: 59: I2CAck();
-"59
-[e ( _I2CAck ..  ]
-[; ;main.c: 60: XH = I2CRead();
-"60
-[e = _XH ( _I2CRead ..  ]
-[; ;main.c: 61: I2CAck();
-"61
-[e ( _I2CAck ..  ]
-[; ;main.c: 62: YL = I2CRead();
-"62
-[e = _YL ( _I2CRead ..  ]
-[; ;main.c: 63: I2CAck();
-"63
-[e ( _I2CAck ..  ]
-[; ;main.c: 64: YH = I2CRead();
-"64
-[e = _YH ( _I2CRead ..  ]
-[; ;main.c: 65: I2CAck();
-"65
-[e ( _I2CAck ..  ]
-[; ;main.c: 66: ZL = I2CRead();
-"66
-[e = _ZL ( _I2CRead ..  ]
-[; ;main.c: 67: I2CAck();
-"67
-[e ( _I2CAck ..  ]
-[; ;main.c: 68: ZH = I2CRead();
-"68
-[e = _ZH ( _I2CRead ..  ]
-[; ;main.c: 69: I2CNak();
-"69
-[e ( _I2CNak ..  ]
-[; ;main.c: 70: I2CStop();
-"70
+[; ;main.c: 51: I2CSend(0X2D);
+"51
+[e ( _I2CSend (1 -> -> 45 `i `uc ]
+[; ;main.c: 52: I2CSend(0X00);
+"52
+[e ( _I2CSend (1 -> -> 0 `i `uc ]
+[; ;main.c: 53: I2CStop();
+"53
 [e ( _I2CStop ..  ]
-[; ;main.c: 72: X = ((XH<<8) | XL);
+[; ;main.c: 55: _delay((unsigned long)((10)*(20000000/4000.0)));
+"55
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 57: I2CStart();
+"57
+[e ( _I2CStart ..  ]
+[; ;main.c: 58: I2CSend(0xA6);
+"58
+[e ( _I2CSend (1 -> -> 166 `i `uc ]
+[; ;main.c: 59: I2CSend(0X31);
+"59
+[e ( _I2CSend (1 -> -> 49 `i `uc ]
+[; ;main.c: 60: I2CSend(0X08);
+"60
+[e ( _I2CSend (1 -> -> 8 `i `uc ]
+[; ;main.c: 61: I2CStop();
+"61
+[e ( _I2CStop ..  ]
+[; ;main.c: 63: _delay((unsigned long)((10)*(20000000/4000.0)));
+"63
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 65: I2CStart();
+"65
+[e ( _I2CStart ..  ]
+[; ;main.c: 66: I2CSend(0xA6);
+"66
+[e ( _I2CSend (1 -> -> 166 `i `uc ]
+[; ;main.c: 67: I2CSend(0X2C);
+"67
+[e ( _I2CSend (1 -> -> 44 `i `uc ]
+[; ;main.c: 68: I2CSend(0X09);
+"68
+[e ( _I2CSend (1 -> -> 9 `i `uc ]
+[; ;main.c: 69: I2CStop();
+"69
+[e ( _I2CStop ..  ]
+[; ;main.c: 71: _delay((unsigned long)((10)*(20000000/4000.0)));
+"71
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 72: I2CStart();
 "72
-[e = _X -> | << -> _XH `i -> 8 `i -> _XL `i `s ]
-[; ;main.c: 73: Y = ((YH<<8) | YL);
+[e ( _I2CStart ..  ]
+[; ;main.c: 73: I2CSend(0xA6);
 "73
-[e = _Y -> | << -> _YH `i -> 8 `i -> _YL `i `s ]
-[; ;main.c: 74: Z = ((ZH<<8) | ZL);
+[e ( _I2CSend (1 -> -> 166 `i `uc ]
+[; ;main.c: 74: I2CSend(0X2D);
 "74
-[e = _Z -> | << -> _ZH `i -> 8 `i -> _ZL `i `s ]
-[; ;main.c: 77: XAVG = get_averageX(X);
+[e ( _I2CSend (1 -> -> 45 `i `uc ]
+[; ;main.c: 75: I2CSend(0X08);
+"75
+[e ( _I2CSend (1 -> -> 8 `i `uc ]
+[; ;main.c: 76: I2CStop();
+"76
+[e ( _I2CStop ..  ]
+[; ;main.c: 77: _delay((unsigned long)((10)*(20000000/4000.0)));
 "77
-[e = _XAVG -> ( _get_averageX (1 _X `us ]
-[; ;main.c: 78: YAVG = get_averageY(Y);
-"78
-[e = _YAVG -> ( _get_averageY (1 _Y `us ]
-[; ;main.c: 79: ZAVG = get_averageZ(Z);
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 79: while(1)
 "79
-[e = _ZAVG -> ( _get_averageZ (1 _Z `us ]
-[; ;main.c: 81: AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
+[e :U 139 ]
+[; ;main.c: 80: {
+"80
+{
+[; ;main.c: 81: X = Y = Z = 0;
 "81
-[e = _AVG -> + + / -> _XAVG `ui -> -> 3 `i `ui / -> _YAVG `ui -> -> 3 `i `ui / -> _ZAVG `ui -> -> 3 `i `ui `us ]
-[; ;main.c: 83: AVG = get_average(AVG);
+[e = _X = _Y = _Z -> -> 0 `i `s ]
+[; ;main.c: 83: I2CStart();
 "83
-[e = _AVG -> ( _get_average (1 -> _AVG `s `us ]
+[e ( _I2CStart ..  ]
+[; ;main.c: 84: I2CSend(0xA6);
 "84
+[e ( _I2CSend (1 -> -> 166 `i `uc ]
+[; ;main.c: 85: I2CSend(50);
+"85
+[e ( _I2CSend (1 -> -> 50 `i `uc ]
+[; ;main.c: 86: I2CRestart();
+"86
+[e ( _I2CRestart ..  ]
+[; ;main.c: 87: I2CSend(0xA7);
+"87
+[e ( _I2CSend (1 -> -> 167 `i `uc ]
+[; ;main.c: 88: XL = I2CRead();
+"88
+[e = _XL ( _I2CRead ..  ]
+[; ;main.c: 89: I2CAck();
+"89
+[e ( _I2CAck ..  ]
+[; ;main.c: 90: XH = I2CRead();
+"90
+[e = _XH ( _I2CRead ..  ]
+[; ;main.c: 91: I2CAck();
+"91
+[e ( _I2CAck ..  ]
+[; ;main.c: 92: YL = I2CRead();
+"92
+[e = _YL ( _I2CRead ..  ]
+[; ;main.c: 93: I2CAck();
+"93
+[e ( _I2CAck ..  ]
+[; ;main.c: 94: YH = I2CRead();
+"94
+[e = _YH ( _I2CRead ..  ]
+[; ;main.c: 95: I2CAck();
+"95
+[e ( _I2CAck ..  ]
+[; ;main.c: 96: ZL = I2CRead();
+"96
+[e = _ZL ( _I2CRead ..  ]
+[; ;main.c: 97: I2CAck();
+"97
+[e ( _I2CAck ..  ]
+[; ;main.c: 98: ZH = I2CRead();
+"98
+[e = _ZH ( _I2CRead ..  ]
+[; ;main.c: 99: I2CNak();
+"99
+[e ( _I2CNak ..  ]
+[; ;main.c: 100: I2CStop();
+"100
+[e ( _I2CStop ..  ]
+[; ;main.c: 102: X = ((XH<<8) | XL);
+"102
+[e = _X -> | << -> _XH `i -> 8 `i -> _XL `i `s ]
+[; ;main.c: 103: Y = ((YH<<8) | YL);
+"103
+[e = _Y -> | << -> _YH `i -> 8 `i -> _YL `i `s ]
+[; ;main.c: 104: Z = ((ZH<<8) | ZL);
+"104
+[e = _Z -> | << -> _ZH `i -> 8 `i -> _ZL `i `s ]
+[; ;main.c: 107: XAVG = get_averageX(X);
+"107
+[e = _XAVG -> ( _get_averageX (1 _X `us ]
+[; ;main.c: 108: YAVG = get_averageY(Y);
+"108
+[e = _YAVG -> ( _get_averageY (1 _Y `us ]
+[; ;main.c: 109: ZAVG = get_averageZ(Z);
+"109
+[e = _ZAVG -> ( _get_averageZ (1 _Z `us ]
+[; ;main.c: 111: AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
+"111
+[e = _AVG -> + + / -> _XAVG `ui -> -> 3 `i `ui / -> _YAVG `ui -> -> 3 `i `ui / -> _ZAVG `ui -> -> 3 `i `ui `us ]
+[; ;main.c: 113: AVG = get_average(AVG);
+"113
+[e = _AVG -> ( _get_average (1 -> _AVG `s `us ]
+"114
 }
 [e :U 138 ]
-"49
+"79
 [e $U 139  ]
 [e :U 140 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: }
-"85
+[; ;main.c: 114: }
+[; ;main.c: 115: }
+"115
 [e :UE 137 ]
 }
-"86
+"116
 [v _FinishBuffer `(v ~T0 @X0 1 ef ]
-"87
+"117
 {
-[; ;main.c: 86: void FinishBuffer(void)
-[; ;main.c: 87: {
+[; ;main.c: 116: void FinishBuffer(void)
+[; ;main.c: 117: {
 [e :U _FinishBuffer ]
 [f ]
-[; ;main.c: 89: Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
-"89
+[; ;main.c: 119: Data_Buffer.HX = XAVG>>8; Data_Buffer.LX=XAVG;
+"119
 [e = . . _Data_Buffer 1 3 -> >> -> _XAVG `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 4 -> _XAVG `uc ]
-[; ;main.c: 90: Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
-"90
+[; ;main.c: 120: Data_Buffer.HY = YAVG>>8; Data_Buffer.LY=YAVG;
+"120
 [e = . . _Data_Buffer 1 5 -> >> -> _YAVG `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 6 -> _YAVG `uc ]
-[; ;main.c: 91: Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
-"91
+[; ;main.c: 121: Data_Buffer.HZ = ZAVG>>8; Data_Buffer.LZ=ZAVG;
+"121
 [e = . . _Data_Buffer 1 7 -> >> -> _ZAVG `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 8 -> _ZAVG `uc ]
-[; ;main.c: 92: Data_Buffer.HT = Get_Tempreture()>>8; Data_Buffer.LT = Get_Tempreture();
-"92
+[; ;main.c: 122: Data_Buffer.HT = Get_Tempreture()>>8; Data_Buffer.LT = Get_Tempreture();
+"122
 [e = . . _Data_Buffer 1 1 -> >> -> ( _Get_Tempreture ..  `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 2 -> ( _Get_Tempreture ..  `uc ]
-[; ;main.c: 93: Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
-"93
+[; ;main.c: 123: Data_Buffer.AVG_VibrationH = AVG>>8; Data_Buffer.AVG_VibrationL = AVG;
+"123
 [e = . . _Data_Buffer 1 9 -> >> -> _AVG `ui -> 8 `i `uc ]
 [e = . . _Data_Buffer 1 10 -> _AVG `uc ]
-[; ;main.c: 94: }
-"94
+[; ;main.c: 124: }
+"124
 [e :UE 141 ]
 }
-"96
+"126
 [v _Get_Tempreture `(us ~T0 @X0 1 ef ]
-"97
+"127
 {
-[; ;main.c: 96: unsigned short Get_Tempreture(void)
-[; ;main.c: 97: {
+[; ;main.c: 126: unsigned short Get_Tempreture(void)
+[; ;main.c: 127: {
 [e :U _Get_Tempreture ]
 [f ]
-"98
+"128
 [v _Result `us ~T0 @X0 1 a ]
-[; ;main.c: 98: unsigned short Result = 0x0000;
+[; ;main.c: 128: unsigned short Result = 0x0000;
 [e = _Result -> -> 0 `i `us ]
-[; ;main.c: 100: ADCON0 |= 0x02;
-"100
+[; ;main.c: 130: ADCON0 |= 0x02;
+"130
 [e =| _ADCON0 -> -> 2 `i `uc ]
-[; ;main.c: 101: _delay((unsigned long)((10)*(20000000/4000.0)));
-"101
+[; ;main.c: 131: _delay((unsigned long)((10)*(20000000/4000.0)));
+"131
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 102: Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
-"102
+[; ;main.c: 132: Result = ((unsigned short)ADRESH << 2)|((unsigned short)ADRESL >> 6);
+"132
 [e = _Result -> | << -> -> _ADRESH `us `ui -> 2 `i >> -> -> _ADRESL `us `ui -> 6 `i `us ]
-[; ;main.c: 103: return Result;
-"103
+[; ;main.c: 133: return Result;
+"133
 [e ) _Result ]
 [e $UE 142  ]
-[; ;main.c: 104: }
-"104
+[; ;main.c: 134: }
+"134
 [e :UE 142 ]
 }

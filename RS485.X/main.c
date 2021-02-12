@@ -38,14 +38,44 @@ void main(void)
     //Initialize I2C Port
     I2CInit();
     //Initialize ADXL345 Accelerometer
-    ini_adxl345();
+    //ini_adxl345();
     
-    id = E_Read(IDDV);  // should be 229 for ADXL1345
-    __delay_ms(10);
-    pow = E_Read(0x2D);  //should be 8 to activate
-    __delay_ms(10);
-    bw_rate = E_Read(0x2C);  //BW_RATE 0x2C is 13
+    //id = E_Read(IDDV);  // should be 229 for ADXL1345
+    //__delay_ms(10);
+    //pow = E_Read(0x2D);  //should be 8 to activate
+    //__delay_ms(10);
+    //bw_rate = E_Read(0x2C);  //BW_RATE 0x2C is 13
     
+    I2CStart();
+    I2CSend(0xA6);
+    I2CSend(0X2D);// Power register
+    I2CSend(0X00); // standbay mode
+    I2CStop();
+
+     __delay_ms(10);  ///5
+
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X31);// Data format register
+     I2CSend(0X08); // Set to full resolution  ////////////////
+     I2CStop();
+
+     __delay_ms(10); ///5
+
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X2C);// Data format register
+     I2CSend(0X09); // Set to full resolution
+     I2CStop();
+
+     __delay_ms(10);  ///5
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X2D);// Power register
+     I2CSend(0X08); // measure mode
+     I2CStop();
+     __delay_ms(10); ///
+     
     while(1)
     {
         X = Y = Z = 0;

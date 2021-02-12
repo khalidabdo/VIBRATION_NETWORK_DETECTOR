@@ -2115,13 +2115,36 @@ UART_vidInit();
 
 I2CInit();
 
-ini_adxl345();
+# 49
+I2CStart();
+I2CSend(0xA6);
+I2CSend(0X2D);
+I2CSend(0X00);
+I2CStop();
 
-id = E_Read(0);
 _delay((unsigned long)((10)*(20000000/4000.0)));
-pow = E_Read(0x2D);
+
+I2CStart();
+I2CSend(0xA6);
+I2CSend(0X31);
+I2CSend(0X08);
+I2CStop();
+
 _delay((unsigned long)((10)*(20000000/4000.0)));
-bw_rate = E_Read(0x2C);
+
+I2CStart();
+I2CSend(0xA6);
+I2CSend(0X2C);
+I2CSend(0X09);
+I2CStop();
+
+_delay((unsigned long)((10)*(20000000/4000.0)));
+I2CStart();
+I2CSend(0xA6);
+I2CSend(0X2D);
+I2CSend(0X08);
+I2CStop();
+_delay((unsigned long)((10)*(20000000/4000.0)));
 
 while(1)
 {
