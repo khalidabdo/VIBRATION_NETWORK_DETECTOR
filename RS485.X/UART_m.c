@@ -9,11 +9,11 @@ unsigned char RECEIVED_ECU_ID[MAX_ALLOWED_RECEIVED_ID];
 
 static void UART_vidSend(unsigned char const * const data,const unsigned char Len);
 
-static void RS845_ManageState(void);
-
 unsigned char UART_u8GetNodeID(void);
 
 unsigned char ECU_ID;
+
+_tRequestState RequestState;
 
 void UART_vidInit(void)
 {
@@ -28,20 +28,18 @@ void UART_vidInit(void)
     PEIE = 1;
     GIE = 1;
     CREN = 1; 
-    
+    RequestState = NoRequiest;
     ECU_ID = UART_u8GetNodeID();
-    UART_vidSend(&ECU_ID,1);
 }
 
 void interrupt UART_vidNewDataReceived()
 {
     if(RCIF == 1)
     {
-        GIE = 0;
-        ptrFinishBuffer();
-        Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE - 1);
-        RS845_ManageState();
-        GIE = 1;
+        if(RCREG == (unsigned char)ECU_ID)
+        {
+            RequestState = Requiest;
+        }
         RCIF = 0;
     }
     else
@@ -50,15 +48,13 @@ void interrupt UART_vidNewDataReceived()
     }
 }
 
-static void RS845_ManageState(void)
+void RS845_ManageState(void)
 {
-    if(RCREG == (unsigned char)ECU_ID)
+    if(RequestState == Requiest)
     {
+        Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE - 1);
         UART_vidSend(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE);
-    }
-    else
-    {
-        /* Do nothing */
+        RequestState = NoRequiest;
     }
 }
 static void UART_vidSend(unsigned char const * const data,const unsigned char Len)

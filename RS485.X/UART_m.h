@@ -55,7 +55,13 @@ _DATA_BUFFER Data_Buffer;
 
 #define Set_ID_DataIntoBuffer(Data) (Data_Buffer.ID = Data)
 
+typedef enum{
+    NoRequiest = 0,
+    Requiest = 1
+}_tRequestState;
+
 void UART_vidInit(void);
 
+void RS845_ManageState(void);
 #endif	/* UART_M_H */
 

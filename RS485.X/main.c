@@ -101,6 +101,7 @@ void main(void)
         AVG = (XAVG/3) + (YAVG/3)+ (ZAVG/3);
         
         AVG = get_average(AVG);  
+        FinishBuffer();
     }
 }
 void FinishBuffer(void)
@@ -111,6 +112,7 @@ void FinishBuffer(void)
     Set_Z_DataIntoBuffer(ZAVG);
     Set_T_DataIntoBuffer(Get_Tempreture());
     Set_AVG_Vibration_DataIntoBuffer(AVG);
+    RS845_ManageState();
 }
 
 unsigned short Get_Tempreture(void)
