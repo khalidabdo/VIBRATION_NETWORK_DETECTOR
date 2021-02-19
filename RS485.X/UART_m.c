@@ -13,7 +13,11 @@ unsigned char UART_u8GetNodeID(void);
 
 unsigned char ECU_ID;
 
+static unsigned char IDCounter = 0;
+static unsigned char BufferID[4];
+    
 _tRequestState RequestState;
+
 
 void UART_vidInit(void)
 {
@@ -30,18 +34,31 @@ void UART_vidInit(void)
     CREN = 1; 
     RequestState = NoRequiest;
     ECU_ID = UART_u8GetNodeID();
+    //UART_vidSend(&ECU_ID,1);
 }
 
 void interrupt UART_vidNewDataReceived()
 {
     if(RCIF == 1)
     {
-        if(RCREG == (unsigned char)ECU_ID)
+        if(IDCounter <= 3)
         {
-            RequestState = Requiest;
+            BufferID[IDCounter] = RCREG;
+            IDCounter++;
+        }
+        if(IDCounter == 4)
+        {
+            IDCounter = 0;
+            if((BufferID[0] == ECU_ID) &&
+               (BufferID[1] == 0x55) &&
+               (BufferID[2] == ECU_ID) &&
+               (BufferID[3] == 0xAA))
+            {
+                RequestState = Requiest;
+            }
         }
         RCIF = 0;
-    }
+    }  
     else
     {
         
