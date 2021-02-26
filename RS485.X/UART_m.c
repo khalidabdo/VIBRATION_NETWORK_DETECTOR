@@ -69,9 +69,11 @@ void RS845_ManageState(void)
 {
     if(RequestState == Requiest)
     {
+        RC1 = 1;
         Data_Buffer.CRC = Get_CRC8(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE - 1);
         UART_vidSend(&Data_Buffer.DATA_BUFFER[0],MAX_DATA_SIZE);
         RequestState = NoRequiest;
+        RC1 = 0;
     }
 }
 static void UART_vidSend(unsigned char const * const data,const unsigned char Len)

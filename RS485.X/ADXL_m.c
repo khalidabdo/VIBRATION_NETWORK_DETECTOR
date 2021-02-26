@@ -5,13 +5,35 @@
 
 void ini_adxl345()
 {
-    E_Write(FIFO_CTL,0x9f);
-    __delay_ms(10);    
-    E_Write(DATA_FORMAT,0x09);
-    __delay_ms(10);  
-    E_Write(BW_RATE,0x0d);
-    __delay_ms(10);        
-    E_Write(POWER_CTL,0x08);  // activate  
+    I2CStart();
+    I2CSend(0xA6);
+    I2CSend(0X2D);// Power register
+    I2CSend(0X00); // standbay mode
+    I2CStop();
+
+     __delay_ms(10);  ///5
+
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X31);// Data format register
+     I2CSend(0X08); // Set to full resolution  ////////////////
+     I2CStop();
+
+     __delay_ms(10); ///5
+
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X2C);// Data format register
+     I2CSend(0X09); // Set to full resolution
+     I2CStop();
+
+     __delay_ms(10);  ///5
+     I2CStart();
+     I2CSend(0xA6);
+     I2CSend(0X2D);// Power register
+     I2CSend(0X08); // measure mode
+     I2CStop();
+     __delay_ms(10); ///
 }
 
 /*

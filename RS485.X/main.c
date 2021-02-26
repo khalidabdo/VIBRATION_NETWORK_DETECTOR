@@ -17,12 +17,16 @@ unsigned short XAVG, YAVG, ZAVG, AVG;
 void system_init(void)
 {
     TRISC0 = 0;
+    TRISC1 = 0;
+    TRISC2 = 0;
     OPTION_REGbits.nRBPU = 0;
     TRISB = 0x7F;
     WPUB = 0x7F;
     ANS3 = 1;
     ADCON0 = 0x0D;
     ANSELH = 0x00;
+    RC1 = 0;
+    RC2 = 1 ;
 }
 
 void main(void) 
@@ -33,42 +37,13 @@ void main(void)
     system_init();
     UART_vidInit();
     
-    //Initialize I2C Port
-    I2CInit();
-    
-    I2CStart();
-    I2CSend(0xA6);
-    I2CSend(0X2D);// Power register
-    I2CSend(0X00); // standbay mode
-    I2CStop();
-
-     __delay_ms(10);  ///5
-
-     I2CStart();
-     I2CSend(0xA6);
-     I2CSend(0X31);// Data format register
-     I2CSend(0X08); // Set to full resolution  ////////////////
-     I2CStop();
-
-     __delay_ms(10); ///5
-
-     I2CStart();
-     I2CSend(0xA6);
-     I2CSend(0X2C);// Data format register
-     I2CSend(0X09); // Set to full resolution
-     I2CStop();
-
-     __delay_ms(10);  ///5
-     I2CStart();
-     I2CSend(0xA6);
-     I2CSend(0X2D);// Power register
-     I2CSend(0X08); // measure mode
-     I2CStop();
-     __delay_ms(10); ///
-     
+    RC2 = 0 ;
     while(1)
     {
         X = Y = Z = 0;
+        //Initialize I2C Port
+        I2CInit();
+        ini_adxl345();
         
         I2CStart();
         I2CSend(CHIP_Write);
@@ -102,6 +77,7 @@ void main(void)
         
         AVG = get_average(AVG);  
         FinishBuffer();
+        RC2 = ~RC2 ;
     }
 }
 void FinishBuffer(void)
